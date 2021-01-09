@@ -33,8 +33,8 @@ Auf der Weboberfläche können die...
 FEHM ist auf den verteilten SD-Karten bereits installiert. Es genügt ein Internet-Browser um die Seite aufzurufen. 
 
 ## Wie kann ich FHEM öffnen?
-Wie gesagt genügt ein einfacher Webbrowser (Safari/Firefox/Edge/Chrome ...)
-![Login](Bilder/login.JPG) 
+
+![Login](Bilder/login.JPG) | Wie gesagt genügt ein einfacher Webbrowser (Safari/Firefox/Edge/Chrome ...)
 
 
 ### Aufruf FHEM-Weboberfläche:
@@ -43,7 +43,7 @@ Wie gesagt genügt ein einfacher Webbrowser (Safari/Firefox/Edge/Chrome ...)
 Benutzername: pi
 Passwort: pi
 ```
-  
+ 
 
 Alternativ steht noch eine Ansicht zur Verfügung, die für Tablets optimiert ist.
 
@@ -69,21 +69,19 @@ Im linken Menübaum findt sich folgende Befehle: <br>
  ![update](Bilder/update.jpg) 
  
 ## Datenaktualisierung / Funktionsweise
-Ein Skript kopiert alle minütlich die Daten auf den Raspberry um diese dort anzuzeigen. pro Minute wird ein Datenpunt angezeigt.
+Ein Skript aktualisiert minütlich die Daten auf den Raspberry.
 
 ## Wie kann ich FHEM starten und stoppen
 
 FHEM startet automatisch mit dem Raspberry Pi. Normalerweise ist also nichts weiter zu tun.
+Ein Neustart des Raspberry-Pi kann über den Befehl ```restart pi``` ausgelöst werden
 
-### Terminal
+### alternativ über ein Terminal
 Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Status abfragen <br>
 `sudo systemctl start fhem`  
 `sudo systemctl stop fhem`  
 `sudo systemctl status fhem`  
 
-### FHEM Eingabezeile
-Mit folgendem Kommando für die FHEM-Eingabezeile kann man FHEM neu starten:  
-`shutdown restart` 
 
 ## Screenshots Tablet-UI
 |Bild|Beschreibung|
