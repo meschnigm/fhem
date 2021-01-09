@@ -35,15 +35,8 @@ FEHM ist auf den verteilten SD-Karten bereits installiert. Es genügt ein Intern
 ## Wie kann ich FHEM öffnen?
 |Bild|Beschreibung|
 | :---:   |  :---     |
-![Login](Bilder/login.JPG) | Wie gesagt genügt ein einfacher Webbrowser (Safari/Firefox/Edge/Chrome ...) ### Aufruf FHEM-Weboberfläche: ```sh
-<IP-Raspberry>:8083
-Benutzername: pi
-Passwort: pi
-``` Alternativ steht noch eine Ansicht zur Verfügung, die für Tablets optimiert ist. ### Aufruf Tablet-UI: ```sh
-<IP-Raspberry>:8083/fhem/ftui/
-Benutzername: pi
-Passwort: pi
-```
+![Login](Bilder/login.JPG) | Wie gesagt genügt ein einfacher Webbrowser (Safari/Firefox/Edge/Chrome ...) \n ### Aufruf FHEM-Weboberfläche:\n```sh
+<IP-Raspberry>:8083\n Benutzername: pi\n Passwort: pi\n``` Alternativ steht noch eine Ansicht zur Verfügung, die für Tablets optimiert ist.\### Aufruf Tablet-UI:\n```<IP-Raspberry>:8083/fhem/ftui/\nBenutzername: pi\nPasswort: pi\n```
 
 
 
