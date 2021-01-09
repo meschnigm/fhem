@@ -1,0 +1,24 @@
+# Created by FHEM/98_SVG.pm, 2020-12-28 17:47:28
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid ytics
+set ylabel "W"
+set y2label "W"
+set yrange [0:]
+set y2range [0:]
+
+#ESS_Logfile 15:3\x3a.*::
+#FileLog_BussinessOptimum 4:write_settings.Data\x3a::($fld[3]*-1)
+#FileLog_BussinessOptimum 5:write_settings.Data\x3a::($fld[4]*-1)
+#ESS_Logfile 11:3\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y1 title 'PV-Leistung' ls l8fill lw 1 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'Einspeichern start' ls l1 lw 3 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'Einspeichern stop' ls l0dot lw 3 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'Einspeicherung' ls l1fill lw 1 with fsteps

@@ -1,0 +1,20 @@
+# Created by FHEM/98_SVG.pm, 2020-04-17 02:55:45
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid ytics
+set ylabel "kWh"
+set y2label "kWh"
+set yrange [0:]
+set y2range [0:]
+
+#Zaehler_LastDaywerte 3:61\x3a.*::
+#Zaehler_Monatswerte 3:61\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y2 title 'Tag' ls l2fill lw 1 with bars,\
+     "<IN>" using 1:2 axes x1y1 title 'Monat' ls l1dot lw 3 with lines

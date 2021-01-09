@@ -1,0 +1,20 @@
+# Created by FHEM/98_SVG.pm, 2020-09-27 01:38:06
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid
+set ylabel "kWh"
+set y2label "W"
+set yrange [0:]
+set y2range [0:]
+
+#ESS_Logfile 17:3\x3a.*::
+#Zaehler_Tageswerte 7:03\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y2 title 'Verbrauch' ls l2fill lw 1 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'heute' ls l0 lw 1 with fsteps

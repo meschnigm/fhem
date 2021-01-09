@@ -1,0 +1,28 @@
+# Created by FHEM/98_SVG.pm, 2021-01-02 14:11:43
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid y2tics
+set ylabel "%"
+set y2label "W"
+set yrange [0:100]
+set y2range [0:]
+
+#ESS_Logfile 3:3\x3a.*::
+#FileLog_BussinessOptimum 9:write_settings.Data\x3a::
+#FileLog_BussinessOptimum 10:write_settings.Data\x3a::
+#FileLog_BussinessOptimum 11:write_settings.Data\x3a::
+#FileLog_BussinessOptimum 12:write_settings.Data\x3a::
+#ESS_Logfile 7:3\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y1 title 'SoC' ls l8 lw 3 with lines,\
+     "<IN>" using 1:2 axes x1y1 title 'SoC-Max' ls l0dot lw 4 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'SoC-Charge' ls l1dot lw 4 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'SoC-Discharge' ls l1dot lw 4 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'SoC-Min' ls l0dot lw 4 with fsteps,\
+     "<IN>" using 1:2 axes x1y2 title 'Ausspeicherung' ls l1fill lw 1 with fsteps

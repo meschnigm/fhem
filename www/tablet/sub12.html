@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>FHEM Sub12</title>
+<head></head>
+<body>
+<div class="gridster">
+<ul>
+
+<li data-col="1" data-row="1"  data-sizex="1" data-sizey="10" data-template="menu.html"></li>
+
+
+<li data-col="2" data-row="1"  data-sizex="7" data-sizey="10" >
+
+			<div data-type="image" data-url="../images/caterva/home_view_ph.png" data-size="90%"></div>
+			<div data-type="label" class="ontop bigger" style="left: 395px; top: 10px" >aktuell</div>
+			<div data-type="label" class="ontop bigger" style="left: 255px; top: 610px" data-device="ESS_Minutenwerte" data-get="02_Grid_to_Household_in_W" data-unit=" W"  data-color="#c0c1c2" ></div>
+			<div data-type="label" class="ontop bigger" style="left: 5px; top: 530px" data-device="ESS_Minutenwerte" data-get="08_Household_demand_in_W" data-unit=" W" data-color="#ffb120" ></div>
+			<div data-type="label" class="ontop bigger" style="left: 236px; top: 440px" data-device="ESS_Minutenwerte" data-get="01_SoC_in_Pct" data-unit=" %" data-color="black" ></div>
+			<div data-type="label" class="ontop bigger" style="left: 395px; top: 325px" data-device="ESS_Minutenwerte" data-get="06_PV_to_Grid_in_W" data-unit=" W" data-color="#ffd600" ></div>
+			<div data-type="label" class="ontop bigger" style="left: 80px; top: 220px" data-device="ESS_Minutenwerte" data-get="04_PV_to_Household_in_W" data-unit=" W" data-color="#ffd600" ></div>
+			<div data-type="label" class="ontop bigger" style="left: 130px; top: 370px" data-device="ESS_Minutenwerte" data-get="03_Battery_to_Household_in_W" data-unit=" W" data-color="#99c939" ></div>
+			<div data-type="label" class="ontop bigger" style="left: 234px; top: 220px" data-device="ESS_Minutenwerte" data-get="05_PV_to_Battery_in_W" data-unit=" W" data-color="#ffd600" ></div>
+			<div data-type="label" class="ontop bigger" style="left: 363px; top: 140px" data-device="ESS_Minutenwerte" data-get="07_PV_power_provision_in_W" data-unit=" W" data-color="black" ></div>
+
+</li>
+
+<li data-col="2" data-row="9"  data-sizex="7" data-sizey="10" >
+
+			<div data-type="image" data-url="../images/caterva/home_view_ph.png" data-size="90%"></div>
+			<div data-type="label" class="ontop bigger" style="left: 395px; top: 10px" >heute</div>
+			<div data-type="label" class="ontop bigger" style="left: 255px; top: 610px" data-device="ESS_Minutenwerte" data-get="statGrid2HHDay" data-unit=" kWh"  data-color="#c0c1c2" data-factor=0.001 data-fix=1  ></div>
+			<div data-type="label" class="ontop bigger" style="left: 5px; top: 530px" data-device="ESS_Minutenwerte" data-get="stat32_HH_counter_level_charge_in_WhDay" data-unit=" kWh" data-color="#ffb120" data-factor=0.001 data-fix=1 ></div>
+			<div data-type="label" class="ontop bigger" style="left: 236px; top: 440px" data-device="ESS_Minutenwerte" data-get="01_SoC_in_Pct" data-unit=" %" data-color="black" ></div>
+			<div data-type="label" class="ontop bigger" style="left: 395px; top: 325px" data-device="ESS_Minutenwerte" data-get="statPV2GridDay" data-unit=" kWh" data-color="#ffd600" data-factor=0.001 data-fix=1  ></div> 
+			<div data-type="label" class="ontop bigger" style="left: 80px; top: 220px" data-device="ESS_Minutenwerte" data-get="statPV2HHDay" data-unit=" kWh" data-color="#ffd600" data-factor=0.001 data-fix=1  ></div> 
+			<div data-type="label" class="ontop bigger" style="left: 130px; top: 370px" data-device="ESS_Minutenwerte" data-get="statESS_counter_level_discharge_in_WhDay" data-unit=" kWh" data-color="#99c939" data-factor=0.001 data-fix=1 ></div>
+			<div data-type="label" class="ontop bigger" style="left: 234px; top: 220px" data-device="ESS_Minutenwerte" data-get="stat39_PPB_counter_level_in_WhDay" data-unit=" kWh" data-color="#ffd600" data-factor=0.001 data-fix=1 ></div>
+			<div data-type="label" class="ontop bigger" style="left: 363px; top: 140px" data-device="ESS_Minutenwerte" data-get="stat35_PV_counter_level_charge_in_WhDay" data-unit=" kWh" data-color="black" data-factor=0.001 data-fix=1 ></div>
+
+
+</li>
+
+
+
+</ul>
+</div>
+</body>
+</html>

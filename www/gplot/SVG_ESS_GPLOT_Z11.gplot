@@ -1,0 +1,20 @@
+# Created by FHEM/98_SVG.pm, 2020-04-12 13:35:08
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid
+set ylabel "kWh"
+set y2label "W"
+set yrange [0:]
+set y2range [0:]
+
+#ESS_Logfile 7:3\x3a.*::
+#Zaehler_Tageswerte 27:61\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y2 title '7_Battery_to_Household_in_W:' ls l1fill lw 1 with lines,\
+     "<IN>" using 1:2 axes x1y1 title '85_PFCRpos_counter_level_in_Wh:' ls l0 lw 1 with lines

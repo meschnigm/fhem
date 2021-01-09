@@ -1,0 +1,18 @@
+# Created by FHEM/98_SVG.pm, 2020-04-02 21:24:21
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid
+set ylabel "%"
+set y2label "%"
+set yrange [0:100]
+set y2range [0:100]
+
+#ESS_Logfile 3:3\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y2 title 'SOC' ls l6fill lw 1 with fsteps

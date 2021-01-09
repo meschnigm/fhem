@@ -1,0 +1,20 @@
+# Created by FHEM/98_SVG.pm, 2020-04-11 22:17:55
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid
+set ylabel "kWh"
+set y2label "W"
+set yrange [0:]
+set y2range [0:]
+
+#Zaehler_Tageswerte 3:61\x3a.*::
+#ESS_Logfile 11:3\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y1 title '61_ESS_counter_level_discharge_in_Wh:' ls l0 lw 1 with lines,\
+     "<IN>" using 1:2 axes x1y2 title '11_PV_to_Battery_in_W:' ls l8fill lw 1 with lines

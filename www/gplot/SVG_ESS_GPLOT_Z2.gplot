@@ -1,0 +1,18 @@
+# Created by FHEM/98_SVG.pm, 2020-04-10 18:06:29
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<TL>'
+set ytics 
+set y2tics 
+set grid
+set ylabel ""
+set y2label ""
+
+#ESS_Logfile 65:3\x3a.*::
+#ESS_Logfile 67:3\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y1 title '65_HH_counter_level_discharge_in_Wh:' ls l0 lw 1 with lines,\
+     "<IN>" using 1:2 axes x1y2 title '67_HH_counter_level_charge_in_Wh:' ls l1 lw 1 with lines

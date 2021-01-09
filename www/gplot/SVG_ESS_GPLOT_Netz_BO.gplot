@@ -1,0 +1,26 @@
+# Created by FHEM/98_SVG.pm, 2021-01-02 14:09:14
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid
+set ylabel "W"
+set y2label "W"
+set yrange [0:]
+set y2range [0:]
+
+#ESS_Logfile 5:3\x3a.*::
+#FileLog_BussinessOptimum 6:write_settings.Data\x3a::
+#FileLog_BussinessOptimum 8:write_settings.Data\x3a::
+#FileLog_BussinessOptimum 7:write_settings.Data\x3a::
+#ESS_Logfile 7:3\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y1 title 'Netzbezug' ls l0fill lw 1 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'starte Ausspeichern sofort' ls l1 lw 1 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'Ausspeichern beenden' ls l0dot lw 4 with fsteps,\
+     "<IN>" using 1:2 axes x1y1 title 'starte Ausspeichern verzögert' ls l1dot lw 4 with fsteps,\
+     "<IN>" using 1:2 axes x1y2 title 'Ausspeicherung' ls l1fill lw 1 with lines

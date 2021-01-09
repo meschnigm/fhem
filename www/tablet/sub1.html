@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<title>FHEM Sub1</title>
+	<head></head>
+	
+<body>
+<div class="gridster">
+<ul>
+
+
+<li data-col="1" data-row="1"  data-sizex="1" data-sizey="10" data-template="menu.html"></li>
+
+
+<li data-row="1" data-col="2"  data-sizex="8" data-sizey="5"> 
+
+	<header>	
+ 		<div data-type="button" class="darker small inline left-align " data-icon="fas fa-solar-panel"></div>
+		<div data-type="label" class=" inline cell big center-align"><medium>PV-Anlage</medium></div>
+	</header>
+	
+	<table> 
+		<thead>
+			<tr> 
+				<th colspan="4">
+					<div	data-type="chart"
+							data-title="PV-Leistung: Max: $eval(parseInt($data{max2}*100)/100) W  /  Zuletzt $eval(parseInt($data{currval2}*10)/10) W                                 Energieerzeugung: $eval(parseInt($data{currval1}*100)/100) kWh"
+							data-device='["Zaehler_Tageswerte","ESS_Minutenwerte"]'
+							data-logdevice='["Zaehler_Tageswerte","ESS_Logfile"]'
+							data-logfile='["CURRENT","CURRENT"]'
+							data-columnspec='["13:.*","15:.*"]'
+							data-uaxis='["secondary","primary"]'
+							data-legend='["Energie","PV_Leistung"]'
+							data-style='["ftui l2","ftui l3fill"]'
+							data-yunit=" W"
+							data-yunit_sec=" kWh"
+							data-minvalue="0"
+							data-minvalue_sec = "0"
+							data-maxvalue="ESS_Minutenwerte:09_PVpeak_in_W"
+							data-showlegend ="false"
+							data-width="560"]
+							data-height="310"
+							data-nofulldays="true"
+							data-daysago_start="24h"
+							data-daysago_end="now"
+							data-crosshair="on"
+					></div>
+				</th> 
+			</tr>  
+		</thead> 
+	</table>
+</li>
+
+
+
+
+<li data-row="6" data-col="10"  data-sizex="8" data-sizey="5"> 
+	<header>	
+ 		<div data-type="button" class="darker small inline left-align " data-icon="far fa-bolt"></div>
+		<div data-type="label" class=" inline cell big center-align"><medium>Netzbezug / Netzeinspeisung</medium></div>
+	</header>
+	
+	<table> 
+		<thead>
+			<tr> 
+				<th colspan="4">
+					<div	data-type="chart"
+							data-title="Netzbezug: $eval(parseInt($data{currval1}*10)/10) W / Netzeinspeisung: $eval(parseInt($data{currval2}*10)/10) W"
+							data-device='["ESS_Minutenwerte","ESS_Minutenwerte"]' 
+							data-logdevice='["ESS_Logfile","ESS_Logfile"]'
+							data-logfile='["CURRENT","CURRENT"]'
+							data-columnspec='["5:.*","13:.*"]'
+							data-uaxis='["primary","primary"]'
+							data-yunit=" W"
+							data-legend='["Netzbezug","Netzeinspeisung"]'
+							data-yunit_sec=" W"
+							data-style='["ftui l2fill","ftui l3fill"]'
+							data-minvalue="0" 
+							data-maxvalue="ESS_Minutenwerte:09_PVpeak_in_W"
+							data-showlegend ="false"
+							data-width="570" data-height="310" 
+							data-nofulldays="true"
+							data-daysago_start="24h"
+							data-daysago_end="now"
+							data-crosshair="on"
+							
+					></div>
+				</th> 
+			</tr>  
+		</thead> 
+	</table>
+</li>
+
+
+
+
+
+<li data-row="1" data-col="10" data-sizex="8" data-sizey="5"> 
+
+	<header>	
+ 		<div data-type="button" class="darker small inline left-align " data-icon="fas fa-battery-half"></div>
+		<div data-type="label" class=" inline cell big center-align"><medium>Speicher: Einspeicherung / Ausspeicherung / Ladezustand</medium></div>
+	</header>
+	
+	<table> 
+
+		<thead>
+			<tr> 
+				<th colspan="4">
+					<div	data-type="chart"
+							data-title="Einspeicherung: $eval(parseInt($data{currval2}*10)/10) W / Ausspeicherung: $eval(parseInt($data{currval3}*10)/10) W / Ladezustand: $eval(parseInt($data{currval1}*10)/10) %"
+							data-device='["ESS_Minutenwerte","ESS_Minutenwerte","ESS_Minutenwerte","ESS_Minutenwerte"]' 
+							data-logdevice='["ESS_Logfile","ESS_Logfile","ESS_Logfile","ESS_Logfile"]'
+							data-logfile='["CURRENT","CURRENT","CURRENT","CURRENT"]'
+							data-columnspec='["3:.*","11:.*","7:.*","57:.*"]'
+							data-uaxis='["secondary","primary","primary","primary"]'
+							data-ptype='["lines","histeps","histeps","histeps"]'
+							data-style='["ftui l6","ftui l3fill","ftui l4fill","ftui l2fill"]'
+							data-yunit=" W"
+							data-yunit_sec=" %"
+							data-legend='["Ladezustand","Einspeicherung","Ausspeicherung","Zwangsnachladung"]'
+							data-crosshair="on"
+							data-minvalue="0" 
+							data-minvalue_sec = "0"
+							data-maxvalue="ESS_Minutenwerte:09_PVpeak_in_W"
+							data-showlegend ="false"
+							data-width="580" data-height="310" 
+							data-yticks="auto"
+							data-minvalue_sec="0"
+							data-maxvalue_sec="100"
+							data-nofulldays="true"
+							data-daysago_start="24h"
+							data-daysago_end="now"
+					></div>
+				</th> 
+			</tr>  
+		</thead> 
+	</table>
+</li>
+
+
+
+
+
+
+
+
+
+
+ <li data-row="6" data-col="2" data-sizex="8" data-sizey="5"> 
+
+	
+	<header>	
+ 		<div data-type="button" class="darker small inline left-align " data-icon="far fa-lightbulb"></div>
+		<div data-type="label" class=" inline cell big center-align"><medium>Verbauch</medium></div>
+	</header>
+
+	<table> 
+		<thead>
+			<tr> 
+				<th colspan="4">
+					<div	data-type="chart"
+							data-title="Leistung:  Durchschnitt: $eval(parseInt($data{avg5}*10)/10) W / Max: $eval(parseInt($data{max5}*100)/100) W / Zuletzt: $eval(parseInt($data{currval5}*100)/100) W       Energieaufnahme: $eval(parseInt($data{currval1}*100)/100) kWh"
+							data-device='["Zaehler_Tageswerte","ESS_Minutenwerte","ESS_Minutenwerte","ESS_Minutenwerte","ESS_Minutenwerte"]'
+							data-logdevice='["Zaehler_Tageswerte","ESS_Logfile","ESS_Logfile","ESS_Logfile","ESS_Logfile"]'
+							data-logfile='["CURRENT","CURRENT","CURRENT","CURRENT","CURRENT"]'
+							data-uaxis='["secondary","primary","primary","primary","primary"]'
+							data-yunit=" W"
+							data-maxvalue="ESS_Minutenwerte:09_PVpeak_in_W"
+							data-yunit_sec=" kWh"
+							data-columnspec='["7:.*","9:.*","7:.*","5:.*","17:.*"]'
+							data-style='["ftui l2","ftui l3fill","ftui l4fill","ftui l2fill","ftui l0fill"]'
+							data-legend='["heute kWh","über PV","über Batterie","über Netz","total"]'
+							data-ptype='["lines","lines","lines:1","lines:2","lines"]'
+							data-showlegend ="false"
+							data-minvalue="0" 
+							data-minvalue_sec = "0"
+							data-width="560" data-height="310"
+							data-nofulldays="true"
+							data-daysago_start="24h"
+							data-daysago_end="now"
+							data-crosshair="on"
+					></div>
+				</th> 
+			</tr>  
+		</thead> 
+	</table>
+</li>
+
+
+
+
+
+</ul>
+</div>
+</body>
+</html>

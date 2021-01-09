@@ -1,0 +1,388 @@
+<html>
+<title>FHEM Sub1</title>
+<head>
+  <style type="text/css">
+        .logo-fhem {
+            background: url(https://wiki.fhem.de/fhemlogo.png) no-repeat;
+            width: 120px;
+            height: 132px;
+            background-size: contain;
+        }
+  </style>
+</head>
+<body>
+<div class="gridster">
+<ul>
+
+<li data-row="1" data-col="1" data-sizex="1" data-sizey="10" data-template="menu.html"></li>
+
+ <li data-row="1" data-col="2" data-sizex="4" data-sizey="10"> 
+ 
+ 
+  
+	<header>	
+ 		<div data-type="button" class="darker small inline left-align " data-icon="far fa-lightbulb"></div>
+		<div data-type="label" class=" inline cell big center-align"><medium>Verbrauch</medium></div>
+	</header>
+<table> 
+
+	<thead>
+		<tr> 
+			<th colspan="4">
+				<div	data-type="chart"
+						data-device='["ESS_Minutenwerte"]' 
+						data-logdevice='["Zaehler_Tageswerte","ESS_Logfile"]'
+						data-logfile='["CURRENT","CURRENT"]'
+						data-columnspec='["7:.*","17:.*"]'
+						data-crosshair="on"
+						data-maxvalue_sec="ESS_Minutenwerte:Axis_max"
+						data-uaxis='["secondary","primary"]'
+						data-maxvalue="ESS_Minutenwerte:09_PVpeak_in_W"
+						data-yunit=" W"
+						data-yunit_sec=" kWh"
+						data-minvalue = "0"
+						data-minvalue_sec = "0"
+						data-legend='["Verbrauch"]'
+						data-style='["ftui l2","ftui l0fill"]'
+						data-showlegend ="false"
+						data-width="290" data-height="310"
+				></div>
+			</th> 
+		</tr>  
+	</thead> 
+	
+
+	
+	<tbody> 
+		<tr> 
+			<td  width ="75" ></td> 
+			<td class="darker right-align bottom-align" width ="100" height="40">Verbrauch</td> 
+			<td class="darker right-align bottom-align" width ="120" >Verbrauch/Tag</td>
+			<td class="darker right-align bottom-align" width ="20" ></td>
+		</tr>  
+	
+		<tr> 
+			<th class="big darker">Tag</div>
+		</th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="stat32_HH_counter_level_charge_in_WhDay" data-unit=" kWh" data-factor=0.001 data-fix=1 ></div>	</td>
+			<td></td>
+		</tr> 
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Monat</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="stat32_HH_counter_level_charge_in_WhMonth" data-unit=" kWh" data-factor=0.001 data-fix=1 ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="Tagesverbrauch_month" data-fix ="1" data-unit=" kWh/Tag" data-factor=0.001 data-fix=1  ></div></td>
+		</tr> 
+		</tr> 
+		
+<!--
+		
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Jahr</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="stat32_HH_counter_level_charge_in_WhYear" data-unit=" Wh"   ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="XX" data-fix ="0" data-unit=" kWh/Tag"   ></div></td>
+		</tr> 
+		</tr> 
+	</tbody> 
+	<tfoot> 
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Total</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="Gesamtverbrauch_total" data-unit=" kWh" data-fix ="0"  ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="Tagesverbrauch_total" data-fix ="0" data-unit=" kWh/Tag"   ></div></td>
+		</tr> 
+		</tr> 
+	</tfoot>
+	
+-->
+	
+
+	
+</table>
+
+</li>
+
+<li data-row="1" data-col="6" data-sizex="4" data-sizey="10"> 
+ 
+ 
+  
+	<header>	
+ 		<div data-type="button" class="darker small inline left-align " data-icon="fas fa-plug"></div>
+		<div data-type="label" class=" inline cell big center-align"><medium>Netzbezug</medium></div>
+	</header>
+<table> 
+
+	<thead>
+		<tr> 
+			<th colspan="4">
+				<div	data-type="chart"
+						data-device='["ESS_Minutenwerte"]' 
+						data-logdevice='["Zaehler_Tageswerte","ESS_Logfile"]'
+						data-logfile='["CURRENT","CURRENT"]'
+						data-maxvalue="ESS_Minutenwerte:09_PVpeak_in_W"
+						data-maxvalue_sec="ESS_Minutenwerte:Axis_max"
+						data-crosshair="on"
+						data-yunit=" W"
+						data-yunit_sec=" kWh"
+						data-minvalue = "0"
+						data-minvalue_sec = "0"
+						data-columnspec='["41:.*","5:.*"]'
+						data-uaxis='["secondary","primary"]'
+						data-legend='["Netzbezug"]'
+						data-style='["ftui l2","ftui l2fill"]'
+						data-showlegend ="false"
+						data-width="290" data-height="310" 
+				></div>
+			</th> 
+		</tr>  
+	</thead> 
+	
+
+	
+	<tbody> 
+		<tr> 
+			<td  width ="75" ></td> 
+			<td class="darker right-align bottom-align" width ="100" height="40">über Netz</td> 
+			<td class="darker right-align bottom-align" width ="120" >Anteil in %</td>
+			<td class="darker right-align bottom-align" width ="20" ></td>
+		</tr>  
+	
+		<tr> 
+			<th class="big darker">Tag</div>
+		</th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="statGrid2HHDay" data-unit=" kWh" data-factor=0.001 data-fix=1></div>	</td> 
+<!--			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_NetzDay" data-unit=" %" ></div>	</td>-->
+		</tr> 
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Monat</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="statGrid2HHMonth" data-unit=" kWh"  data-factor=0.001 data-fix=1></div></td> 
+<!--			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_NetzMonth" data-fix ="0" data-unit=" %"   ></div></td>-->
+		</tr> 
+		</tr> 
+		
+<!--
+		
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Jahr</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="ueber_Netz" data-unit=" kWh"   ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_Netz" data-fix ="0" data-unit=" %"   ></div></td>
+		</tr> 
+		</tr> 
+	</tbody> 
+	<tfoot> 
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Total</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="ueber_Netz_total" data-unit=" MWh" data-fix ="0"  ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_Netz_total" data-fix ="0" data-unit=" %"   ></div></td>
+		</tr> 
+		</tr> 
+	</tfoot>
+	
+-->
+	
+
+	
+</table>
+
+</li>
+ 
+
+
+
+
+
+
+
+
+ <li data-row="1" data-col="6" data-sizex="4" data-sizey="10"> 
+ 
+ 
+  
+	<header>	
+ 		<div data-type="button" class="darker small inline left-align " data-icon="fas fa-solar-panel"></div>
+		<div data-type="label" class=" inline cell big center-align"><medium>über PV</medium></div>
+	</header>
+<table> 
+
+	<thead>
+		<tr> 
+			<th colspan="4">
+				<div	data-type="chart"
+						data-device='["ESS_Minutenwerte"]' 
+						data-logdevice='["Zaehler_Tageswerte","ESS_Logfile"]'
+						data-logfile='["CURRENT","CURRENT"]'
+						data-maxvalue="ESS_Minutenwerte:09_PVpeak_in_W"
+						data-maxvalue_sec="ESS_Minutenwerte:Axis_max"
+						data-crosshair="on"
+						data-yunit=" W"
+						data-yunit_sec=" kWh"
+						data-minvalue = "0"
+						data-minvalue_sec = "0"
+						data-columnspec='["37:.*","9:.*"]'
+						data-uaxis='["secondary","primary"]'
+						data-legend='["über PV Anlage"]'
+						data-style='["ftui l2","ftui l3fill"]'
+						data-showlegend ="false"
+						data-width="290" data-height="310"
+				></div>
+			</th> 
+		</tr>  
+	</thead> 
+	
+
+	
+	<tbody> 
+		<tr> 
+			<td  width ="75" ></td> 
+			<td class="darker right-align bottom-align" width ="100" height="40">über PV</td> 
+			<td class="darker right-align bottom-align" width ="120" >Anteil in %</td>
+			<td class="darker right-align bottom-align" width ="20" ></td>
+		</tr>  
+	
+		<tr> 
+			<th class="big darker">Tag</div>
+		</th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="statPV2HHDay" data-unit=" kWh" data-factor=0.001 data-fix=1 ></div>	</td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_PVAnlageDay" data-fix ="0" data-unit="  %" data-fix=0  ></div>	</td>
+		</tr> 
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Monat</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="statPV2HHMonth" data-unit=" kWh" data-factor=0.001 data-fix=1 ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_PVAnlageMonth" data-fix ="0" data-unit=" %"   ></div></td>
+		</tr> 
+		</tr> 
+		
+<!--
+
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Jahr</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="ueber_PVAnlage" data-unit=" kWh"   ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_PVAnlage" data-fix ="0" data-unit=" %"   ></div></td>
+		</tr> 
+		</tr> 
+	</tbody> 
+	<tfoot> 
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Total</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="ueber_PVAnlage_total" data-unit=" MWh" data-fix ="0"  ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_PVAnlage_total" data-fix ="0" data-unit=" %"   ></div></td>
+		</tr> 
+		</tr> 
+	</tfoot>
+	
+-->
+	
+
+	
+</table>
+
+</li>
+
+<li data-row="1" data-col="10" data-sizex="4" data-sizey="10"> 
+ 
+ 
+ 
+  
+	<header>	
+ 		<div data-type="button" class="darker small inline left-align " data-icon="fas fa-battery-half"></div>
+		<div data-type="label" class=" inline cell big center-align"><medium>über Stromspeicher</medium></div>
+	</header>
+<table> 
+
+	<thead>
+		<tr> 
+			<th colspan="4">
+			
+			<div	data-type="chart"
+					data-device='["ESS_Minutenwerte"]' 
+					data-logdevice='["Zaehler_Tageswerte","ESS_Logfile"]'
+					data-logfile='["CURRENT","CURRENT"]'
+					data-columnspec='["03:.*","7:.*"]'
+					data-uaxis='["secondary","primary"]'
+					data-legend='["Ausspeicherung"]'
+					data-style='["ftui l2","ftui l4fill"]'
+					data-crosshair="on"
+					data-yunit=" W"					
+					data-minvalue = "0"
+					data-maxvalue="ESS_Minutenwerte:09_PVpeak_in_W"
+
+					data-yunit_sec=" kWh"					
+					data-minvalue_sec = "0"
+					data-maxvalue_sec="ESS_Minutenwerte:Axis_max"
+						
+					data-showlegend ="false"
+					data-width="290" data-height="310"
+			></div>
+			
+			</th> 
+
+		</tr>  
+	</thead> 
+	
+
+
+	<tbody> 
+		<tr> 
+			<td  width ="75" ></td> 
+			<td class="darker right-align bottom-align" width ="100" height="40">über Stromspeicher</td> 
+			<td class="darker right-align bottom-align" width ="120" >Anteil in %</td>
+			<td class="darker right-align bottom-align" width ="20" ></td>
+		</tr>  
+	
+		<tr> 
+			<th class="big darker">Tag</div>
+		</th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="statESS_counter_level_discharge_in_WhDay" data-unit=" kWh" data-factor=0.001 data-fix=1 ></div>	</td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_CatervaDay" data-unit=" %" data-fix=0 ></div>	</td> 
+		</tr> 
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Monat</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="statESS_counter_level_discharge_in_WhMonth" data-unit=" kWh" data-factor=0.001 data-fix=1 ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_CatervaMonth" data-fix ="0" data-unit="  %" data-fix=0  ></div></td> 
+		</tr> 
+		</tr> 
+		
+<!--
+
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Jahr</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="stat34_ESS_counter_level_charge_in_WhYear" data-unit=" Wh"   ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_Caterva" data-fix ="0" data-unit="  %"   ></div></td>
+		</tr> 
+		</tr> 
+	</tbody> 
+	<tfoot> 
+		<tr> 
+		<tr> 
+			<th><div height "75" class="big darker">Total</div></th>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="ueber_Caterva_total" data-unit=" MWh" data-fix ="0"  ></div></td>
+			<td><div data-type="label" class="large right-align" data-device="ESS_Minutenwerte" data-get="prozUeber_Caterva_total" data-fix ="0" data-unit="  %"   ></div></td>
+		</tr> 
+		</tr> 
+	</tfoot>
+	
+-->
+	
+	
+</table>
+
+</li>
+ 
+  
+ 
+  
+
+
+</ul>
+</div>
+</body>
+</html>

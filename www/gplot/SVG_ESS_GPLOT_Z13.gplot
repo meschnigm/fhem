@@ -1,0 +1,16 @@
+# Created by FHEM/98_SVG.pm, 2020-04-12 13:27:19
+set terminal png transparent size <SIZE> crop
+set output '<OUT>.png'
+set xdata time
+set timefmt "%Y-%m-%d_%H:%M:%S"
+set xlabel " "
+set title '<L1>'
+set ytics 
+set y2tics 
+set grid
+set ylabel ""
+set y2label "kWh"
+
+#Zaehler_Tageswerte 35:61\x3a.*::
+
+plot "<IN>" using 1:2 axes x1y2 title 'PV to HH??' ls l0 lw 1 with lines
