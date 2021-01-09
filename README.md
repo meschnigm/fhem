@@ -33,7 +33,8 @@ Auf der Weboberfläche können die...
 FEHM ist auf den verteilten SD-Karten bereits installiert. Es genügt ein Internet-Browser um die Seite aufzurufen. 
 
 ## Wie kann ich FHEM öffnen?
-
+|Bild|Beschreibung|
+| :---:   |  :---     |
 ![Login](Bilder/login.JPG) | Wie gesagt genügt ein einfacher Webbrowser (Safari/Firefox/Edge/Chrome ...)
 
 
@@ -57,7 +58,10 @@ Passwort: pi
   
  ## Wie wird FHEM aktualisiert?
  
-seit Jan. 2021 gib es die möglichkeit das Software selbst zu aktualisieren - hierzu muss aber eine Einstellung vorgenommen werden.
+
+|Bild|Beschreibung|
+| :---:   |  :---     |
+![update](Bilder/update.jpg) | seit Jan. 2021 gib es die möglichkeit das Software selbst zu aktualisieren - hierzu muss aber eine Einstellung vorgenommen werden.
 Folgendes muss einmalig in die FHEM Eingabezeile kopieren danach ENTER drücken: <br><br>
 ```update add https://raw.githubusercontent.com/meschnigm/fhem/master/controls_webserver.txt``` 
 <br><br>
@@ -65,8 +69,6 @@ Im linken Menübaum findt sich folgende Befehle: <br>
 ***updatecheck*** Damit wird angezeigt welche Files bei einem Update installiert werden.<br>
 ***update***      Damit wird ein Updateprozess gestartet - der Vorgang kann einige Minuten dauern da vorher auch ein Backup erstellt wird.<br>
 ***restart pi***  Nachdem der Prozess abgeschlossen ist muss ein Restart von FHEM durchgeführt werden.<br><br>
- 
- ![update](Bilder/update.jpg) 
  
 ## Datenaktualisierung / Funktionsweise
 Ein Skript aktualisiert minütlich die Daten auf den Raspberry.
