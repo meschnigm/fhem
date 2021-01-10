@@ -126,7 +126,7 @@ Abhilfe mit .... <br>
 `touch ~/.ssh/known_hosts`  <br>
 
 danach das Skript manuell anstoßen und ggf. den neuen host mit "yes" bestätigen ...   <br>
-`cd /home/pi/Git-Clones/webserver/var_caterva/scripts/`  <br>
+`cd /var/caterva/scripts/`  <br>
 `./copy_log.sh`  <br>
 
 führt man <br>
