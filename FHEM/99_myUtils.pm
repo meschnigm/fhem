@@ -856,7 +856,7 @@ fhem("setreading write_settings Data @dataArray");
 
 
 
-# Config an die Caterva als BusinessOptimum.config kopieren
+# Config senden an Caterva
 sub 
 copy2caterva_BusinessOptimum_config()
 {
@@ -867,8 +867,7 @@ system("scp /opt/fhem/log/BusinessOptimum.config admin\@caterva:bin");
 
 sub 
 delete_noPVBuffering_Flag()
-{
-system("ssh admin\@caterva rm -f /home/admin/registry/noPVBuffering");
+{`ssh admin\@caterva "rm -f /home/admin/registry/noPVBuffering"`;
 }
 
 sub 
@@ -877,10 +876,50 @@ create_noPVBuffering_Flag()
 system("ssh admin\@caterva touch /home/admin/registry/noPVBuffering");
 }
 
+#Stop BusinessOptimum
+#touch /tmp/BusinessOptimumStop
+sub 
+create_BusinessOptimumStop_Flag()
+{
+system("ssh admin\@caterva touch /tmp/BusinessOptimumStop");
+Log 1, "BusinessOptimum_Stop_Flag gesetzt";
+}
+
+
+#Start of Module-Balancing:
+#touch /var/log/ModuleBalancing
+sub 
+start_ModuleBalancing_Flag()
+{
+system("ssh admin\@caterva touch /var/log/ModuleBalancing");
+Log 1, "ModuleBalancing_Flag gesetzt";
+}
+
+
+#Start of Cell-Balancing:
+#touch /tmp/CellBalancing
+sub 
+start_CellBalancing_Flag()
+{
+system("ssh admin\@caterva touch /var/log/CellBalancing");
+Log 1, "CellBalancing_Flag gesetzt";
+}
+
+
+
+sub
+reset_Befehl_Anzeige()
+{
+		fhem("define at_Sec_Counter at +00:00:03 set BusinessOptimum_Befehle .");
+		fhem("attr at_Sec_Counter room 6_System");
+}
+
+
+
 sub
 check_noPVBuffering_Flag()
 {
-my $response = `echo -f /home/admin/registry/noPVBuffering`;
+my $response = `(echo -f /home/admin/registry/noPVBuffering;)`;
 if ($response) {Log 1,"File noPVBuffering existiert"} else {Log 1,"File noPVBuffering existiert nicht"}; 
 }
 

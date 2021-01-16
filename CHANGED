@@ -4,3 +4,4 @@
 2021-01-14 No auto backup | No readback for system_initialization and BusinessOptimum_BOS
 2021-01-16 Menüeintrag für Logfile BusinessOptimum anzeigen / BO auf Port 83 
 2021-01-16 exclude from update of 00_Private.cfg
+2021-01-16 BusinessOptimum Befehle Stop Modul_Balancing Cell_Balancing
