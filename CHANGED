@@ -1,5 +1,5 @@
 2021-01-09 initial Version with FHEM SW distribution
 2021-01-09 README update - Übertrag Bilder
 2021-01-13 BO on/off hidden
-2021-01-14 No audo backup | No readback for system_initialization and BusinessOptimum_BOS
+2021-01-14 No auto backup | No readback for system_initialization and BusinessOptimum_BOS
 2021-01-16 Menüeintrag für Logfile BusinessOptimum anzeigen 
