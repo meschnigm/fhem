@@ -3,3 +3,4 @@
 2021-01-13 BO on/off hidden
 2021-01-14 No auto backup | No readback for system_initialization and BusinessOptimum_BOS
 2021-01-16 Menüeintrag für Logfile BusinessOptimum anzeigen / BO auf Port 83 
+2021-01-19 exclude from update of 99myUtil.pm
