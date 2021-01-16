@@ -44,24 +44,26 @@ if ($config_array[9] ne ReadingsNum("SoC_err","state",0)) {fhem("set SoC_err $co
 if ($config_array[10] ne ReadingsNum("counter_discharge_to_standby_max","state",0)) {fhem("set counter_discharge_to_standby_max $config_array[10]")};
 if ($config_array[11] ne ReadingsNum("counter_standby_to_discharge_max","state",0)) {fhem("set counter_standby_to_discharge_max $config_array[11]")};
 if ($new_counter_increment ne ReadingsNum("counter_increment","state",0)) {fhem("set counter_increment $new_counter_increment")};
-if ($config_array[14] == 112) {fhem("
-	set system_initialization DEAKTIVIERT;
-	
-	")} else {fhem("
-	set system_initialization AKTIV;
-
-	")};
+if ($config_array[14] == 112) {
+	Log 1, "habe 112 erkannt";
+	#	fhem("set system_initialization DEAKTIVIERT")
+	}
+elsif ($config_array[14] == 1112) {
+	Log 1, "habe 1112 erkannt";
+#	fhem("set system_initialization AKTIV");
+	};
 
 
 if ($config_array[15] ne ReadingsVal("ECS3_configuration","state","999")) {fhem("set ECS3_configuration $config_array[15]")};
-if ($config_array[16] == 1) {fhem("
-	set BusinessOptimum_BOS BusinessOptimum_standalone;
-
-	")}
-else {fhem("
-	set BusinessOptimum_BOS BusinessOptimumStarter;
-
-	")}
+if ($config_array[16] == 1) {
+	Log 1, "habe 1 - BusinessOptimumStarter Konfig erkannt";
+	#	fhem("set BusinessOptimum_BOS BusinessOptimum_standalone")
+	}
+elsif ($config_array[16] == 0) {
+	Log 1, "habe 0 BusinessOptimum Standalone erkannt";
+	#	fhem("set BusinessOptimum_BOS BusinessOptimumStarter")
+}
+	
 Log 1, "Lokal nach Update:                  ".ReadingsVal("write_settings","Data","999");
 }
 

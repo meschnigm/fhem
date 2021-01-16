@@ -1,6 +1,5 @@
-UPD 2021-01-09_21:01:32 129862  Bilder/akku_uebersicht_1.png
 UPD 2021-01-09_13:21:46 1907    FHEM/00_BusinessOptimum_Parameter.cfg
-UPD 2021-01-09_13:21:46 48114   FHEM/00_Caterva_ESS.cfg
+UPD 2021-01-13_23:37:16 48389   FHEM/00_Caterva_ESS.cfg
 UPD 2021-01-09_13:21:46 462     FHEM/00_Private.cfg
 UPD 2021-01-09_13:21:46 4914    FHEM/00_SYSMON.cfg
 UPD 2021-01-13_22:15:47 4175    fhem.cfg
