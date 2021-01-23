@@ -43,7 +43,7 @@ UPD 2021-01-09_13:21:46 4133    www/images/caterva/sonne_off.png
 UPD 2021-01-09_13:21:46 7608    www/images/caterva/verbrauch.png
 UPD 2021-01-09_13:21:46 1630    www/tablet/index.html
 UPD 2021-01-09_13:21:46 1190    www/tablet/menu.html
-UPD 2021-01-09_13:21:46 13090   www/tablet/sub10.html
+UPD 2021-01-09_13:21:46 13098   www/tablet/sub10.html
 UPD 2021-01-09_13:21:46 13923   www/tablet/sub11.html
 UPD 2021-01-09_13:21:46 4041    www/tablet/sub12.html
 UPD 2021-01-23_13:24:59 6290    www/tablet/sub1.html
