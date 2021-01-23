@@ -27,8 +27,8 @@ my $config_skalar = `ssh admin\@caterva "tail -1 /home/admin/bin/BusinessOptimum
 my @config_array=split(/\;/,$config_skalar);
 my $new_counter_increment = $config_array[12]+$config_array[13];
 
-Log 1, "Von Caterva eingelesene BO Config: $config_skalar";
-Log 1, "Lokal vor  Update:                  ".ReadingsVal("write_settings","Data","999");
+#Log 1, "Von Caterva eingelesene BO Config: $config_skalar";
+#Log 1, "Lokal vor  Update:                  ".ReadingsVal("write_settings","Data","999");
 
 
 if ($config_array[0] ne ReadingsNum("P_in_W_chargeStandbyThreshold","state",0)) {fhem("set P_in_W_chargeStandbyThreshold $config_array[0]")};
@@ -45,26 +45,26 @@ if ($config_array[10] ne ReadingsNum("counter_discharge_to_standby_max","state",
 if ($config_array[11] ne ReadingsNum("counter_standby_to_discharge_max","state",0)) {fhem("set counter_standby_to_discharge_max $config_array[11]")};
 if ($new_counter_increment ne ReadingsNum("counter_increment","state",0)) {fhem("set counter_increment $new_counter_increment")};
 if ($config_array[14] == 112) {
-	Log 1, "habe 112 erkannt";
+	#Log 1, "habe 112 erkannt";
 	#	fhem("set system_initialization DEAKTIVIERT")
 	}
 elsif ($config_array[14] == 1112) {
-	Log 1, "habe 1112 erkannt";
+	#Log 1, "habe 1112 erkannt";
 #	fhem("set system_initialization AKTIV");
 	};
 
 
 if ($config_array[15] ne ReadingsVal("ECS3_configuration","state","999")) {fhem("set ECS3_configuration $config_array[15]")};
 if ($config_array[16] == 1) {
-	Log 1, "habe 1 - BusinessOptimumStarter Konfig erkannt";
+	#Log 1, "habe 1 - BusinessOptimumStarter Konfig erkannt";
 	#	fhem("set BusinessOptimum_BOS BusinessOptimum_standalone")
 	}
 elsif ($config_array[16] == 0) {
-	Log 1, "habe 0 BusinessOptimum Standalone erkannt";
+	#Log 1, "habe 0 BusinessOptimum Standalone erkannt";
 	#	fhem("set BusinessOptimum_BOS BusinessOptimumStarter")
 }
 	
-Log 1, "Lokal nach Update:                  ".ReadingsVal("write_settings","Data","999");
+#Log 1, "Lokal nach Update:                  ".ReadingsVal("write_settings","Data","999");
 }
 
 #	setreading system_initialization Initstatus 112;
@@ -120,15 +120,15 @@ my @failuretext = (
 );
 
 if ($#failureflags != $#failuretext) {die "Die Anzahl Fehler passt nicht zu definierten Fehlertexten. FailureFlags: $#failureflags Texte: $#failuretext \n\n"};
-for(0..31) {
-	fhem("deletereading dummy_Fehlerspeicher $name$_");
-}
+#for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_");}
 my $count = 0;
 
 foreach(@failureflags){
 					if ($failureflags[$count] > 0){
 							fhem("setreading dummy_Fehlerspeicher $name$count $failuretext[$count]");
 							} 
+					else {fhem("deletereading dummy_Fehlerspeicher $name$count")}
+					
 					$count ++;
 					}
 }
@@ -176,13 +176,14 @@ my @failuretext = (
 );
 
 if ($#failureflags != $#failuretext) {die "Die Anzahl Fehler passt nicht zu definierten Fehlertexten. FailureFlags: $#failureflags Texte: $#failuretext \n\n"};
-for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
+#for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
 
 my $count = 0;
 foreach(@failureflags){
 					if ($failureflags[$count] > 0){
 							fhem("setreading dummy_Fehlerspeicher $name$count $failuretext[$count]");
 							} 
+					else {fhem("deletereading dummy_Fehlerspeicher $name$count")}
 					$count ++;
 					}
 }
@@ -231,13 +232,14 @@ my @failuretext = (
 
 if ($#failureflags != $#failuretext) {die "Die Anzahl Fehler passt nicht zu definierten Fehlertexten. FailureFlags: $#failureflags Texte: $#failuretext \n\n"};
 
-for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
+#for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
 
 my $count = 0;
 foreach(@failureflags){
 					if ($failureflags[$count] > 0){
 							fhem("setreading dummy_Fehlerspeicher $name$count $failuretext[$count]");
 							} 
+					else {fhem("deletereading dummy_Fehlerspeicher $name$count")}
 					$count ++;
 					}
 }
@@ -286,13 +288,14 @@ my @failuretext = (
 
 if ($#failureflags != $#failuretext) {die "Die Anzahl Fehler passt nicht zu definierten Fehlertexten. FailureFlags: $#failureflags Texte: $#failuretext \n\n"};
 
-for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
+#for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
 
 my $count = 0;
 foreach(@failureflags){
 					if ($failureflags[$count] > 0){
 							fhem("setreading dummy_Fehlerspeicher $name$count $failuretext[$count]");
 							} 
+					else {fhem("deletereading dummy_Fehlerspeicher $name$count")}
 					$count ++;
 					}
 }
@@ -342,13 +345,14 @@ my @failuretext = (
 
 if ($#failureflags != $#failuretext) {die "Die Anzahl Fehler passt nicht zu definierten Fehlertexten. FailureFlags: $#failureflags Texte: $#failuretext \n\n"};
 
-for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
+#for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
 
 my $count = 0;
 foreach(@failureflags){
 					if ($failureflags[$count] == 1 ){
 							fhem("setreading dummy_Fehlerspeicher $name$count $failuretext[$count]");
 							} 
+					else {fhem("deletereading dummy_Fehlerspeicher $name$count")}
 					$count ++;
 					}
 }
@@ -396,13 +400,14 @@ my @failuretext = (
 );
 
 if ($#failureflags != $#failuretext) {die "Die Anzahl Fehler passt nicht zu definierten Fehlertexten. FailureFlags: $#failureflags Texte: $#failuretext \n\n"};
-for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
+#for(0..31) {fhem("deletereading dummy_Fehlerspeicher $name$_")}
 
 my $count = 0;
 foreach(@failureflags){
 					if ($failureflags[$count] > 0){
 							fhem("setreading dummy_Fehlerspeicher $name$count $failuretext[$count]");
 							} 
+					else {fhem("deletereading dummy_Fehlerspeicher $name$count")}
 					$count ++;
 					}
 }
@@ -960,8 +965,19 @@ read_PV_Peak()
 {
 my $PVPeak = trim(`rsh admin\@caterva cat /home/admin/registry/out/pvPeak`);
 fhem("setreading ESS_Minutenwerte 09_PVpeak_in_W_2 $PVPeak");
-Log 1,"read_PV_Peak: $PVPeak W";
+#Log 1,"read_PV_Peak: $PVPeak W";
 }
+
+sub 
+read_bmm_Type()
+{
+my $bmmType = trim(`rsh admin\@caterva cat /home/admin/registry/out/bmmType`);
+my $gen = substr(`rsh admin\@caterva ls -l /home/admin/registry/out/gen*`,0,7);
+
+fhem("setreading ESS_Minutenwerte 09_bmmType $bmmType.$gen");
+Log 1,"read_bmm_Type: $bmmType";
+}
+
 
 sub
 addToLog($$)
