@@ -959,7 +959,7 @@ sub
 read_PV_Peak()
 {
 my $PVPeak = trim(`rsh admin\@caterva cat /home/admin/registry/out/pvPeak`);
-fhem("setreading ESS_Minutenwerte 09_PVpeak_in_W $PVPeak");
+fhem("setreading ESS_Minutenwerte 09_PVpeak_in_W_2 $PVPeak");
 Log 1,"read_PV_Peak: $PVPeak W";
 }
 
