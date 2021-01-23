@@ -950,6 +950,19 @@ system("rsh admin\@caterva /home/admin/bin/BusinessOptimumStarter.sh stop");
 }
 
 
+#{`rsh admin\@caterva cat /home/admin/registry/out/pvPeak`}
+# bei Anlagen welche die Prediction-Funktion abgeschalten haben wird der Wert PV Peak nicht mehr berechnet...
+# Dieser Wert wird bei Tablet-UI zur Anzeigeoptimierung verwendet.
+# Bei Initialisierung soll dieser Wert eingelesen werden.
+
+sub 
+read_PV_Peak()
+{
+my $PVPeak = trim(`rsh admin\@caterva cat /home/admin/registry/out/pvPeak`);
+fhem("setreading ESS_Minutenwerte 09_PVpeak_in_W $PVPeak");
+Log 1,"read_PV_Peak: $PVPeak W";
+}
+
 sub
 addToLog($$)
 {
