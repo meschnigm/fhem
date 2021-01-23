@@ -1,4 +1,4 @@
-# Created by FHEM/98_SVG.pm, 2021-01-02 14:09:14
+# Created by FHEM/98_SVG.pm, 2021-01-17 02:59:15
 set terminal png transparent size <SIZE> crop
 set output '<OUT>.png'
 set xdata time
@@ -23,4 +23,4 @@ plot "<IN>" using 1:2 axes x1y1 title 'Netzbezug' ls l0fill lw 1 with fsteps,\
      "<IN>" using 1:2 axes x1y1 title 'starte Ausspeichern sofort' ls l1 lw 1 with fsteps,\
      "<IN>" using 1:2 axes x1y1 title 'Ausspeichern beenden' ls l0dot lw 4 with fsteps,\
      "<IN>" using 1:2 axes x1y1 title 'starte Ausspeichern verzögert' ls l1dot lw 4 with fsteps,\
-     "<IN>" using 1:2 axes x1y2 title 'Ausspeicherung' ls l1fill lw 1 with lines
+     "<IN>" using 1:2 axes x1y1 title 'Ausspeicherung' ls l1fill lw 1 with lines
