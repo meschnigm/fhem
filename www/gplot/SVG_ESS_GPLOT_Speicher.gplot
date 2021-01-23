@@ -1,4 +1,4 @@
-# Created by FHEM/98_SVG.pm, 2020-11-09 21:33:17
+# Created by FHEM/98_SVG.pm, 2021-01-23 21:33:08
 set terminal png transparent size <SIZE> crop
 set output '<OUT>.png'
 set xdata time
@@ -14,9 +14,9 @@ set yrange [0:]
 set y2range [0:100]
 
 #ESS_Logfile 11:3\x3a.*::
-#ESS_Logfile 7:3\x3a.*::
+#ESS_Logfile 23:3\x3a.*::
 #ESS_Logfile 3:3\x3a.*::
-#ESS_Logfile 57:3\x3a.*::
+#ESS_Logfile 25:3\x3a.*::
 
 plot "<IN>" using 1:2 axes x1y1 title 'Einspeicherung' ls l8fill lw 1 with fsteps,\
      "<IN>" using 1:2 axes x1y1 title 'Ausspeicherung' ls l1fill lw 1 with fsteps,\
