@@ -7,3 +7,4 @@
 2021-01-16 BusinessOptimum Befehle Stop Modul_Balancing Cell_Balancing
 2021-01-23 PV-Peak wird von Caterva eingelesen da im bei Anlagen mit deaktivierter Prediction nicht mehr im ESS_Minutenwerte verfügbar. Fehler bei Tablet-UI damit behoben.
 2021-01-23 Logeinträge "deletereading dummyFehlerspeicher" vermieden - Issue#4 PIsoll not PISet
+2021-01-25 BusinessOptimum Statusanzeigen hinzugefügt

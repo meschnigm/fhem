@@ -968,14 +968,38 @@ fhem("setreading ESS_Minutenwerte 09_PVpeak_in_W_2 $PVPeak");
 #Log 1,"read_PV_Peak: $PVPeak W";
 }
 
-sub 
-read_bmm_Type()
-{
-my $bmmType = trim(`rsh admin\@caterva cat /home/admin/registry/out/bmmType`);
-my $gen = substr(`rsh admin\@caterva ls -l /home/admin/registry/out/gen*`,0,7);
+#sub 
+#read_bmm_Type()
+#{
+#my $bmmType = `rsh admin\@caterva cat /home/admin/registry/out/bmmType 1>/dev/null 2>&1 ; echo $?`;
+#fhem("setreading ESS_Minutenwerte 09_bmmType $bmmType");
+#Log 1,"read_bmm_Type: $bmmType";
+#}
 
-fhem("setreading ESS_Minutenwerte 09_bmmType $bmmType.$gen");
-Log 1,"read_bmm_Type: $bmmType";
+sub 
+read_ESS_GEN()
+{
+my $gen = `(rsh admin\@caterva "ls /home/admin/registry/out/gen1" 1>/dev/null 2>&1 ; echo \$?)`;
+#my $gen = system("rsh admin\@caterva ls /home/admin/registry/out/gen1 1>/dev/null 2>&1 ; echo $?");
+Log 1,"read_ESS_GEN: GEN1 --> $gen";
+return $gen;
+}
+
+#{check_File_exists('/home/admin/registry/out/gen1')}
+#{check_File_exists('/home/admin/bin/BusinessOptimum.sh')}
+sub 
+check_File_exists($)
+{
+my $filename = shift;
+my $response = `(rsh admin\@caterva "ls $filename" 1>/dev/null 2>&1 ; echo \$?)`;
+Log 1,"response: $response";
+if ($response == "0"){
+    Log 1,"$filename exists";
+    return 1;
+} else {
+    Log 1,"$filename does not exist";
+    return 9;
+    }
 }
 
 
@@ -1009,6 +1033,13 @@ sub prg_Tage_YTD(){
 	return($yday);
 	}
 
+
+sub myProxyForVentil($){
+my $DEVICE= shift;
+ if ($DEVICE =~ m/Ventil_1/) {return "Bewaesserung_Vorgarten_1"}
+ if ($DEVICE =~ m/Ventil_2/) {return "Bewaesserung_Vorgarten_aussen"}
+ if ($DEVICE =~ m/Ventil_3/) {return "Bewaesserung_Vorgarten_Tropfschlauch"}
+}
 
 #########################################################################
 # do not change below _this_ line.
