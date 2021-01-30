@@ -1,4 +1,4 @@
-# Created by FHEM/98_SVG.pm, 2021-01-17 02:59:15
+# Created by FHEM/98_SVG.pm, 2021-01-27 19:53:16
 set terminal png transparent size <SIZE> crop
 set output '<OUT>.png'
 set xdata time
@@ -17,7 +17,7 @@ set y2range [0:]
 #FileLog_BussinessOptimum 6:write_settings.Data\x3a::
 #FileLog_BussinessOptimum 8:write_settings.Data\x3a::
 #FileLog_BussinessOptimum 7:write_settings.Data\x3a::
-#ESS_Logfile 7:3\x3a.*::
+#ESS_Logfile 23:3\x3a.*::
 
 plot "<IN>" using 1:2 axes x1y1 title 'Netzbezug' ls l0fill lw 1 with fsteps,\
      "<IN>" using 1:2 axes x1y1 title 'starte Ausspeichern sofort' ls l1 lw 1 with fsteps,\

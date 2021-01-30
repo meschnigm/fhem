@@ -890,6 +890,19 @@ system("ssh admin\@caterva touch /tmp/BusinessOptimumStop");
 Log 1, "BusinessOptimum_Stop_Flag gesetzt";
 }
 
+#Stop BusinessOptimumStarter
+#touch /tmp/BusinessOptimumStarterStop
+#touch /tmp/BusinessOptimumStop
+sub 
+create_BusinessOptimumStarterStop_Flag()
+{
+system("ssh admin\@caterva touch /tmp/BusinessOptimumStarterStop");
+system("ssh admin\@caterva touch /tmp/BusinessOptimumStop");
+Log 1, "BusinessOptimumStarterStop_Flag gesetzt";
+
+
+}
+
 
 #Start of Module-Balancing:
 #touch /var/log/ModuleBalancing
@@ -906,7 +919,7 @@ Log 1, "ModuleBalancing_Flag gesetzt";
 sub 
 start_CellBalancing_Flag()
 {
-system("ssh admin\@caterva touch /var/log/CellBalancing");
+system("ssh admin\@caterva touch /tmp/CellBalancing");
 Log 1, "CellBalancing_Flag gesetzt";
 }
 
@@ -930,29 +943,29 @@ if ($response) {Log 1,"File noPVBuffering existiert"} else {Log 1,"File noPVBuff
 
 
 #rsh admin@caterva "/home/admin/bin/BusinessOptimumKill.sh" 
-sub 
-BusinessOptimumKill()
-{
-system("rsh admin\@caterva /home/admin/bin/BusinessOptimumKill.sh");
-}
+#sub 
+#BusinessOptimumKill()
+#{
+#system("rsh admin\@caterva /home/admin/bin/BusinessOptimumKill.sh");
+#}
 
-sub 
-BusinessOptimumStart()
-{
-system("rsh admin\@caterva nohup /home/admin/bin/BusinessOptimum.sh &");
-}
+#sub 
+#BusinessOptimumStart()
+#{
+#system("rsh admin\@caterva nohup /home/admin/bin/BusinessOptimum.sh &");
+#}
 
-sub 
-BusinessOptimumStarter_Start()
-{
-system("(rsh admin\@caterva nohup /home/admin/bin/BusinessOptimumStarter.sh start & )&");
-}
+#sub 
+#BusinessOptimumStarter_Start()
+#{
+#system("(rsh admin\@caterva nohup /home/admin/bin/BusinessOptimumStarter.sh start & )&");
+#}
 
-sub 
-BusinessOptimumStarter_Stop()
-{
-system("rsh admin\@caterva /home/admin/bin/BusinessOptimumStarter.sh stop");
-}
+#sub 
+#BusinessOptimumStarter_Stop()
+#{
+#system("rsh admin\@caterva /home/admin/bin/BusinessOptimumStarter.sh stop");
+#}
 
 
 #{`rsh admin\@caterva cat /home/admin/registry/out/pvPeak`}
