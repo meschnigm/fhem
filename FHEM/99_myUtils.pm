@@ -942,6 +942,17 @@ if ($response) {Log 1,"File noPVBuffering existiert"} else {Log 1,"File noPVBuff
 }
 
 
+
+#/home/pi/Git-Clones/.FHEM_Setup_Copy_per_Shell.did_run
+sub
+check_FHEM_Rechte_Flag()
+{
+system("ssh admin\@caterva touch /var/log/ModuleBalancing");
+Log 1, "ModuleBalancing_Flag gesetzt";
+}
+
+
+
 #rsh admin@caterva "/home/admin/bin/BusinessOptimumKill.sh" 
 #sub 
 #BusinessOptimumKill()
@@ -989,6 +1000,26 @@ fhem("setreading ESS_Minutenwerte 09_PVpeak_in_W_2 $PVPeak");
 #Log 1,"read_bmm_Type: $bmmType";
 #}
 
+
+
+#grep -i quinger /home/admin/bin/BusinessOptimum.sh
+#substr(TimeNow(),0,7);
+sub 
+read_BO_Version()
+{
+my $Version = substr(`rsh admin\@caterva grep -i quinger /home/admin/bin/BusinessOptimum.sh`,21,23);
+if (length($Version) > 0){
+fhem("setreading BO_BusinessOptimum_Status Version $Version");
+Log 1,"Business Optimum Version $Version installiert";
+}
+else {
+fhem("setreading BO_BusinessOptimum_Status Version n.a.");
+Log 1,"Business Optimum nicht installiert";
+}
+}
+
+
+
 sub 
 read_ESS_GEN()
 {
@@ -1005,6 +1036,22 @@ check_File_exists($)
 {
 my $filename = shift;
 my $response = `(rsh admin\@caterva "ls $filename" 1>/dev/null 2>&1 ; echo \$?)`;
+Log 1,"response: $response";
+if ($response == "0"){
+    Log 1,"$filename exists";
+    return 1;
+} else {
+    Log 1,"$filename does not exist";
+    return 9;
+    }
+}
+
+#gleiches lokal
+sub 
+check_File_exists_PI($)
+{
+my $filename = shift;
+my $response = `("ls $filename" 1>/dev/null 2>&1 ; echo \$?)`;
 Log 1,"response: $response";
 if ($response == "0"){
     Log 1,"$filename exists";
