@@ -9,4 +9,5 @@
 2021-01-23 Logeinträge "deletereading dummyFehlerspeicher" vermieden - Issue#4 PIsoll not PISet
 2021-01-25 BusinessOptimum Statusanzeigen hinzugefügt
 2021-01-30 Bugfix Start von Cell-Balancing und Stop BusinessOptimum / ForcedChargingActive hinzugefügt
-2021-01-31 BO Version auslesen 
+2021-01-31 BO Version auslesen
+2021-02-07 Bugfix BO_Version auslesen - Issue #9 sub1.html - Parameter von 25 auf 75 ändern (Nachladen)
