@@ -992,13 +992,13 @@ fhem("setreading ESS_Minutenwerte 09_PVpeak_in_W_2 $PVPeak");
 #Log 1,"read_PV_Peak: $PVPeak W";
 }
 
-#sub 
-#read_bmm_Type()
-#{
-#my $bmmType = `rsh admin\@caterva cat /home/admin/registry/out/bmmType 1>/dev/null 2>&1 ; echo $?`;
-#fhem("setreading ESS_Minutenwerte 09_bmmType $bmmType");
-#Log 1,"read_bmm_Type: $bmmType";
-#}
+sub 
+read_bmm_Type()
+{
+my $bmmType = `rsh admin\@caterva cat /home/admin/registry/out/bmmType 1>/dev/null 2>&1 ; echo $?`;
+fhem("setreading ESS_Minutenwerte 09_bmmType $bmmType");
+Log 1,"read_bmm_Type: $bmmType";
+}
 
 
 
@@ -1020,14 +1020,14 @@ Log 1,"Business Optimum nicht installiert";
 
 
 
-sub 
-read_ESS_GEN()
-{
-my $gen = `(rsh admin\@caterva "ls /home/admin/registry/out/gen1" 1>/dev/null 2>&1 ; echo \$?)`;
+#sub 
+#read_ESS_GEN()
+#{
+#my $gen = `(rsh admin\@caterva "ls /home/admin/registry/out/gen1" 1>/dev/null 2>&1 ; echo \$?)`;
 #my $gen = system("rsh admin\@caterva ls /home/admin/registry/out/gen1 1>/dev/null 2>&1 ; echo $?");
-Log 1,"read_ESS_GEN: GEN1 --> $gen";
-return $gen;
-}
+#Log 1,"read_ESS_GEN: GEN1 --> $gen";
+#return $gen;
+#}
 
 #{check_File_exists('/home/admin/registry/out/gen1')}
 #{check_File_exists('/home/admin/bin/BusinessOptimum.sh')}
