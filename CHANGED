@@ -1,13 +1,1 @@
-2021-01-09 initial Version with FHEM SW distribution
-2021-01-09 README update - Übertrag Bilder
-2021-01-13 BO on/off hidden
-2021-01-14 No auto backup | No readback for system_initialization and BusinessOptimum_BOS
-2021-01-16 Menüeintrag für Logfile BusinessOptimum anzeigen / BO auf Port 83 
-2021-01-16 exclude from update of 00_Private.cfg
-2021-01-16 BusinessOptimum Befehle Stop Modul_Balancing Cell_Balancing
-2021-01-23 PV-Peak wird von Caterva eingelesen da im bei Anlagen mit deaktivierter Prediction nicht mehr im ESS_Minutenwerte verfügbar. Fehler bei Tablet-UI damit behoben.
-2021-01-23 Logeinträge "deletereading dummyFehlerspeicher" vermieden - Issue#4 PIsoll not PISet
-2021-01-25 BusinessOptimum Statusanzeigen hinzugefügt
-2021-01-30 Bugfix Start von Cell-Balancing und Stop BusinessOptimum / ForcedChargingActive hinzugefügt
-2021-01-31 BO Version auslesen
-2021-02-07 Bugfix BO_Version auslesen - Issue #9 sub1.html - Parameter von 25 auf 75 ändern (Nachladen)
+2021-02-14 Issue6 - Illeagal division by zero -
