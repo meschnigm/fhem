@@ -1,4 +1,4 @@
-# Created by FHEM/98_SVG.pm, 2021-02-13 18:18:28
+# Created by FHEM/98_SVG.pm, 2021-02-21 00:17:31
 set terminal png transparent size <SIZE> crop
 set output '<OUT>.png'
 set xdata time
@@ -10,6 +10,7 @@ set y2tics
 set grid y2tics
 set ylabel "W"
 set y2label "%"
+set y2range [0:100]
 
 #ESS_Logfile 11:3\x3a.*::
 #ESS_Logfile 23:3\x3a.*::
