@@ -1,11 +1,11 @@
-# Created by FHEM/98_SVG.pm, 2021-01-06 15:39:14
+# Created by FHEM/98_SVG.pm, 2021-02-23 21:16:12
 set terminal png transparent size <SIZE> crop
 set output '<OUT>.png'
 set xdata time
 set timefmt "%Y-%m-%d_%H:%M:%S"
 set xlabel " "
 set title '<L1>'
-set ytics "high" 6, "low" 2
+set ytics 
 set y2tics "high" 6, "low" 2
 set grid ytics
 set ylabel ""
