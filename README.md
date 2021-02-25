@@ -53,7 +53,7 @@ Ein Skript aktualisiert minütlich die Daten auf den Raspberry.
 ## Wie kann ich FHEM starten und stoppen
 
 FHEM startet automatisch mit dem Raspberry Pi. Normalerweise ist also nichts weiter zu tun.
-Ein Neustart des Raspberry-Pi kann über den Befehl ```restart pi``` ausgelöst werden
+Ein Neustart des Raspberry-Pi kann über den Befehl ```restart fhem``` im Menübaum ausgelöst werden
 
 ### alternativ über ein Terminal
 Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Status abfragen <br>
