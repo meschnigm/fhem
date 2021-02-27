@@ -99,7 +99,10 @@ https://paypal.me/pools/c/8xhRXwquVW
 
 
 
-## bekannte Probleme
+## Bei Änderungswünschen:   
+Bitte ein Issue eröffnen...
+https://github.com/meschnigm/fhem/issues
+
 
 ### Für Business-Optimum muß FHEM Dateinen auf die Caterva kopieren   
 Sind die Rechteeinstellungen nicht korrekt gesetzt gelingt das kopieren der config nicht.  
@@ -108,36 +111,3 @@ Die aktuellen Skripte zur Aktualisierung der SW führen diese Einstellung automa
 https://github.com/ac-caterva/webserver-public/blob/main/README.md
 
 
-### Fehlerspeicher/Statusregister können nicht ausgelesen werden. 
-Um die Fehlerregister auslesen zu können, muss zunächst eine Einstellung auf der Silverbox vorgenommen werden.<br>
-`ssh admin@caterva`<br>
-`sudo nano /etc/rc.local`<br>
-hier die Zeile 13 bis 15 auskommentieren also ein # einfügen.
-
-`# iptables -A INPUT -p tcp --dport 1337 -i lo -j ACCEPT`<br>
-`# iptables -A INPUT -p tcp --dport 1337 -i tun0 -j ACCEPT`<br>
-`# iptables -A INPUT -p tcp --dport 1337 -j DROP `<br>
-
-speichern mit str-o<br>
-exit mit str-x<br>
-Neustart mit <br>
-`sudo reboot -h now`
-
-### Warning: the ECDSA host key for 'caterva' differs ....
-Sollte folgende Warnung erscheinen... mit `yes` bestätigen <br>
-`Warning: the ECDSA host key for 'caterva' differs from the key for the IP address '192.168.0.222'`  <br>
-`Offending key for IP in /home/pi/.ssh/known_hosts:2` <br>
-`Matching host key in /home/pi/.ssh/known_hosts:5` <br>
-`Are you sure you want to continue connecting (yes/no)?`<br>
-
-Abhilfe mit .... <br>
-`mv ~/.ssh/known_hosts ~/.ssh/known_hosts.alt`  <br> 
-`touch ~/.ssh/known_hosts`  <br>
-
-danach das Skript manuell anstoßen und ggf. den neuen host mit "yes" bestätigen ...   <br>
-`cd /var/caterva/scripts/`  <br>
-`./copy_log.sh`  <br>
-
-führt man <br>
-`./copy_log.sh`<br> 
-erneut aus sollte das logfile ohne Fehlermeldung erzeugt werden.<br>
