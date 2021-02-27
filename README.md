@@ -104,9 +104,8 @@ Bitte ein Issue eröffnen...
 https://github.com/meschnigm/fhem/issues
 
 
-### Für Business-Optimum muß FHEM Dateinen auf die Caterva kopieren   
-Sind die Rechteeinstellungen nicht korrekt gesetzt gelingt das kopieren der config nicht.  
-Das Skript FHEM_Setup_Copy_per_Shell.sh welches dem Technikteam bekannt ist behebt das Problem.  
+### Rechteeinstellung für korrekten Datenaustausch mit dem Caterva Rechner:  
+Ist die Rechteeinstellungen nicht korrekt gelingt dar Datenaustausch mit dem Caterva Rechner  nicht.  
 Die aktuellen Skripte zur Aktualisierung der SW führen diese Einstellung automatisisert durch.  
 https://github.com/ac-caterva/webserver-public/blob/main/README.md
 
