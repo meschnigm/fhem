@@ -91,6 +91,14 @@ Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Stat
 |![BusinessOptimum](Bilder/BusinessOptimum_7.JPG) |"lastloglines_BO" steht für die letzen Zeilen im Logfile der Business Optimum Logigk. Dies ist extrem wichtig um die korrekte Funktionsweise zu prüfen. Speziell wenn eine neue Konfiguration erstellt und gesendet wurde kann man hier sehen ob diese auch übernommen wurde.<br> Tipp: will man eine größere Anzahl von Zeilen angezeigt bekommen kann man die letzte Zahl im der Browseradresse entsprechend vergrößern.<br> `http://<ip.raspberr>:8083/fhem?cmd=lastloglines_BO+300`
 
 
+## Unterstützung
+Die Entwicklung der FHEM-Oberfläche ist mein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen und steht kostenlos zur Verfügung.  
+Wer auf freiwilliger Basis eine Anerkennung geben will kann hier tun. 
+https://paypal.me/pools/c/8xhRXwquVW
+
+
+
+
 ## bekannte Probleme
 
 ### Für Business-Optimum muß FHEM Dateinen auf die Caterva kopieren   
