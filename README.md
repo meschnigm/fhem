@@ -92,8 +92,8 @@ Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Stat
 
 
 ## Unterstützung
-Die Entwicklung der FHEM-Oberfläche ist mein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen und steht kostenlos zur Verfügung.  
-Wer auf freiwilliger Basis eine Anerkennung geben will kann hier tun. 
+Die Entwicklung der FHEM-Oberfläche ist mein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen. 
+Wer auf freiwilliger Basis eine Anerkennung geben will, kann dies hier tun. 
 https://paypal.me/pools/c/8xhRXwquVW
 
 
