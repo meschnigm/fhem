@@ -53,7 +53,7 @@ Ein Skript aktualisiert minütlich die Daten auf den Raspberry.
 ## Wie kann ich FHEM starten und stoppen
 
 FHEM startet automatisch mit dem Raspberry Pi. Normalerweise ist also nichts weiter zu tun.
-Ein Neustart des Raspberry-Pi kann über den Befehl ```restart pi``` ausgelöst werden
+Ein Neustart des Raspberry-Pi kann über den Befehl ```restart fhem``` im Menübaum ausgelöst werden
 
 ### alternativ über ein Terminal
 Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Status abfragen <br>
@@ -83,20 +83,29 @@ Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Stat
 |![BusinessOptimum](Bilder/BusinessOptimum_0.JPG) |Im Menüpunkt "Standardeinstellungen" können durch anklicken auf Sommer bzw. Winter zwei Standardkonfigurationen eingespielt werden. Dies ist hilfreich falls die Parameter noch nicht initialiisert sind (???). Will man eigene Standardkonfigurationen abspeichern klickt man auf "Standardkonfiguration editieren".
 |![BusinessOptimum](Bilder/BusinessOptimum_0.1.JPG) |Ganz unten in dem Dialog welcher sich daraufhin öffnet findet man "mySummerSetting" und "myWinterSetting" klickt man diese öffnen sich weitere Details.
 |![BusinessOptimum](Bilder/BusinessOptimum_0.2.JPG) |Die eigentlichen Parameter lassen sich nach Klick auf DEF auch verändern. 
-|![BusinessOptimum](Bilder/BusinessOptimum_1.JPG) |Im Menüpunkt "Einspeicherung" kann über zwei Regler der Einschaltpunkt und der Abschaltpunkt für das Einspeichern bestimmt werden. Wird die Schwelle für Einspeicherung beenden für eine Zeit unterschritten geht der Inverter in den Standby betrieb. Diese Zeit kann mit dem Parameter 5.1 eingestellt werden.
+|![BusinessOptimum](Bilder/BusinessOptimum_1.JPG) |Im Menüpunkt "Einspeicherung" kann über zwei Regler der Einschaltpunkt und der Abschaltpunkt für das Einspeichern bestimmt werden. Wird die Schwelle für Einspeicherung beenden für eine Zeit unterschritten geht der Inverter in den Standby betrieb. Diese Zeit kann mit dem Parameter 1.3 eingestellt werden.
 |![BusinessOptimum](Bilder/BusinessOptimum_2.JPG) |Im Menüpunkt "Ausspeicherung sofort" findet sich die Einstellung ab welcher Leistung eine Ausspeicherung ohne Zeitverzögerung beginnen soll. 
 |![BusinessOptimum](Bilder/BusinessOptimum_3.JPG) |Im Menüpunkt "Ausspeicherung verzögert" findet sich die Einstellung ab welcher Leistung eine Ausspeicherung nach einer gewissen Verzögerung beginnen soll. Mit diesen beiden Parametern kann man gezielt auf einzelne Verbraucher reagieren.
 |![BusinessOptimum](Bilder/BusinessOptimum_4.JPG) |Im Menüpunkt Ladeschwellen kann unter 4.1 der Maximale SoC eingestellt werden auf welchen der Speicher aufgeladen wird. Werte größer 90% lassen sich nicht einstellen da die Caterva interne Logik dies nicht zulässt. Ein erneutes Einspeichern wird erst gestartet wenn der Parameter 4.2 Soc-Charge unterschritten wird. Damit wird ein ständiges Nachladen verhindert. Der Parameter SoC-Discharge ist die Ladeschwelle auf die sich der Speicher entladen soll. Fällt der Speicher auf einen Ladezustand von SoC-min wird ein Notladeprogramm gestartet und der Speicher wird über das Versorgungsnetz auf SoC-Discharge aufgeladen.
-|![BusinessOptimum](Bilder/BusinessOptimum_5.JPG) |Hier findet sich die bereits angesprochene Zeit bis zum Übergang in den Standby-Mode sowie die Zykluszeit der Business Optimim Routine. Längere Zeiten ergeben eine geringere Systemlast - reagieren dafür etwas träger.
-|![BusinessOptimum](Bilder/BusinessOptimum_6.JPG) | klickt man auf "text" kann man sich das erzeugte Config File ansehen.
-|![BusinessOptimum](Bilder/BusinessOptimum_7.JPG) | klickt man auf "schreiben" bzw. auf die Diskette wird das Config-File auf die Caterva kopiert. Aktuell muss hier die BusinessOptimum Logik manuell gestoppt und wieder gestertet werden. 
+|![BusinessOptimum](Bilder/BusinessOptimum_6.JPG) |die Zeile 6.1 zeigt die Konfiguration im Kurzform - wird diese Zeile grün angezeigt wird die Konfiguration von FHEM als lauffähig bewertet. Erst über den "senden" Button wird die Konfiguration zur Caterva übertragen.<br> die Zeile 6.2 zeigt in diesem Fall kurz die Rückmeldung "gesendet" darüberhinaus weitere Kommandos die gesendet werden können <br> die Zeile 6.3 zeigt die Version der Business Optimum Logik diese Information bitte bei eventuellen Auffälligkeiten immer angeben. Auch kann hier die Logik angehalten werten --> "stop" oder Anschluss neu gestartet werden. Dieser Startvorgang dauert einige Zeit da hier die Caterva neu gestartet wird. <br> die Zeilen 6.4 und 6.5 Zeigen an ob Modul bzw. Cell balancing aktiv sind. Diese Funktion ist nur bei GEN2 Anlagen gegeben. Diese Funktionen sollten nur verwendet werden wenn es einen konkreten Anlass dafür gibt. <br> in Zeile 6.6 gibt es dann schließlich noch eine Einstellung zur Statusabfrage. Damit werden die Daten im darüberliegenden Bereich aktualisiert. Mit "execnow" wird der Status einmalig aktualisiert mit der Einstellung "activ" erfolgt diese Aktualisierung zyklisch. Wer ressoucen sparen möchte stellt die Abfrage auf "inaktiv" und verwendet ausschließlich die "execnow" Variante.
+|![BusinessOptimum](Bilder/BusinessOptimum_7.JPG) |"lastloglines_BO" steht für die letzen Zeilen im Logfile der Business Optimum Logigk. Dies ist extrem wichtig um die korrekte Funktionsweise zu prüfen. Speziell wenn eine neue Konfiguration erstellt und gesendet wurde kann man hier sehen ob diese auch übernommen wurde.<br> Tipp: will man eine größere Anzahl von Zeilen angezeigt bekommen kann man die letzte Zahl im der Browseradresse entsprechend vergrößern.<br> `http://<ip.raspberr>:8083/fhem?cmd=lastloglines_BO+300`
 
 
-## Aktuelle Probleme
+## Unterstützung
+Die Entwicklung der FHEM-Oberfläche ist mein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen und steht kostenlos zur Verfügung.  
+Wer auf freiwilliger Basis eine Anerkennung geben will kann hier tun. 
+https://paypal.me/pools/c/8xhRXwquVW
+
+
+
+
+## bekannte Probleme
 
 ### Für Business-Optimum muß FHEM Dateinen auf die Caterva kopieren   
 Sind die Rechteeinstellungen nicht korrekt gesetzt gelingt das kopieren der config nicht.  
-Das Skript FHEM_Setup_Copy_per_Shell.sh welches dem Technikteam bekannt ist behebt das Problem. 
+Das Skript FHEM_Setup_Copy_per_Shell.sh welches dem Technikteam bekannt ist behebt das Problem.  
+Die aktuellen Skripte zur Aktualisierung der SW führen diese Einstellung automatisisert durch.  
+https://github.com/ac-caterva/webserver-public/blob/main/README.md
 
 
 ### Fehlerspeicher/Statusregister können nicht ausgelesen werden. 
