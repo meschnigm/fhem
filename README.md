@@ -97,9 +97,12 @@ https://github.com/meschnigm/fhem/issues
 
 
 ## Unterstützung
-Die Entwicklung der FHEM-Oberfläche ist mein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen. 
+Die Entwicklung der FHEM-Oberfläche ist ein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen. 
 Wer auf freiwilliger Basis eine Anerkennung geben will, kann dies hier tun. 
-https://paypal.me/pools/c/8xhRXwquVW
+
+Anja: https://paypal.me/pools/c/8xm58ob2st
+Manuel: https://paypal.me/pools/c/8xhRXwquVW
+
 
 
 
