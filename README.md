@@ -28,16 +28,20 @@ Auf der Weboberfläche können die...
 ... Herunterfahren bzw Restart des Business-Controllers (Caterva) - Herunterfahren empfielt sich vor dem Ausschalten der Sicherung.
 ... Bedienoberfläche für Business-Optimum - damit können Vorgaben gemacht werden um den Wirkungsgrad der Anlage zu erhöhen. (Beta-Phase)
 
-## Was brauche ich um FEHM zu benutzen?
+## Voraussetzungen:
 
 FEHM ist auf den verteilten SD-Karten bereits installiert. Es genügt ein Internet-Browser um die Seite aufzurufen. 
+
+Rechteeinstellung für korrekten Datenaustausch mit dem Caterva Rechner:
+
+Ist die Rechteeinstellungen nicht korrekt gelingt dar Datenaustausch mit dem Caterva Rechner nicht.
+Die aktuellen Skripte zur Aktualisierung der SW führen diese Einstellung automatisisert durch.
+https://github.com/ac-caterva/webserver-public/blob/main/README.md
 
 ## Wie kann ich FHEM öffnen?
 |Bild|Beschreibung|
 | :---:   |  :---     |
 ![Login](Bilder/login.JPG) | Wie gesagt genügt ein einfacher Webbrowser (Safari/Firefox/Edge/Chrome ...) <br><br>***Aufruf FHEM-Weboberfläche:***<br>```<IP-Raspberry>:8083``` <br>```Benutzername: pi```<br>```Passwort: pi```<br>Alternativ steht noch eine Ansicht zur Verfügung, die für Tablets optimiert ist.<br><br>***Aufruf Tablet-UI:***<br>```<IP-Raspberry>:8083/fhem/ftui/```<br>```Benutzername: pi```<br>```Passwort: pi```
-
-
 
   
  ## Wie wird FHEM aktualisiert?
@@ -54,12 +58,6 @@ Ein Skript aktualisiert minütlich die Daten auf den Raspberry.
 
 FHEM startet automatisch mit dem Raspberry Pi. Normalerweise ist also nichts weiter zu tun.
 Ein Neustart des Raspberry-Pi kann über den Befehl ```restart fhem``` im Menübaum ausgelöst werden
-
-### alternativ über ein Terminal
-Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Status abfragen <br>
-`sudo systemctl start fhem`  
-`sudo systemctl stop fhem`  
-`sudo systemctl status fhem`  
 
 
 ## Screenshots Tablet-UI
@@ -79,7 +77,7 @@ Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Stat
 |![FHEM-WEB_3_Fehlerspeicher](Bilder/FHEM_WEB_Seite3.JPG) | Alle 10 Minuten werden die Fehlerspeicher aktualisiert, in der FHEM Weboberfläche kann die Datenaktualisierung über einen Update-Knopf auch angestossen werden.
 |![FHEM-WEB_4_Statusregister](Bilder/FHEM_WEB_Seite4.JPG) | Auf diser Seite können einige Statusregister der Caterva ausgelesen werden. Einige Kommandos sind nicht bei allen Generationen vorhanden. Nur bei der GEN2 lassen sich hier z.b. die Spannungen der einzelnen Akkus anzeigen.<br> Im Abschnitt Systembefehle können wie in der Beschreibung gezeigt weitere Systembefehle abgesetzt werden die derzeit nicht implementiert sind. Falls einzelne Register noch von Interesse sind können diese implementiert werden. <br> Drückt man auf eine der Registernamen werden die Inhalte angezeigt. Über den Update Button wird das Register neu eingelesen. Sollten die Befehle aus diesem Abschnitt nicht klappen bitte den Abschnitt "Aktuelle Probleme" lesen.
 |![Modulspannung GEN2](Bilder/akku_uebersicht_1.png) | Bei der GEN2 können über "Statusregistern" --> "Status Batteriemodule (Gen2 only)" die Modulspannungen angezeigt werden.
-|![BusinessOptimum](Bilder/BusinessOptimum.JPG) | **Die Folgenden Seiten befinden sich aktuell im Beta-Status und sind ggf. noch nicht allgemein zugänglich.** <br>Über dieses Menü können die Parameter für die BusinessOptimum Logik erstellt und zur Caterva übertragen werden. Diese Logik soll den Speicherschrank daran hindern bei geringer Leistung aktiv zu werden, da hier der Wirkungsgrad relativ ungünstig ist. Es kann also erreicht werden, dass erst ab 2500W eingespeichert wird und nur bei einem Verbrauch von 3000W ausgespeichert wird. Jeder kann die Parameter auf seine Gegebenheiten anpassen. Die Werte in gelb entsprechen der aktuellen Einstellung - mit den Schiebereglern können die Werte verändert werden. Nur wenn gewisse Abhängikeiten eingehalten werden, ist die Kofiguration lauffähig. Fehlerhafte Einstellungen werden rot dargestellt und können nicht auf die Caterva gesendet werden. 
+|![BusinessOptimum](Bilder/BusinessOptimum.JPG) | **Die Folgenden Seiten zeigen die Bedienoberfläche für den von Siegfried entwickelten BusinessOptimum Algorithmus. Dieser befinden sich aktuell im Beta-Status und ist ggf. noch nicht allgemein zugänglich.** <br>Über dieses Menü können die Parameter für die BusinessOptimum Logik erstellt und zur Caterva übertragen werden. Diese Logik soll den Speicherschrank daran hindern bei geringer Leistung aktiv zu werden, da hier der Wirkungsgrad relativ ungünstig ist. Es kann also erreicht werden, dass erst ab 2500W eingespeichert wird und nur bei einem Verbrauch von 3000W ausgespeichert wird. Jeder kann die Parameter auf seine Gegebenheiten anpassen. Die Werte in gelb entsprechen der aktuellen Einstellung - mit den Schiebereglern können die Werte verändert werden. Nur wenn gewisse Abhängikeiten eingehalten werden, ist die Kofiguration lauffähig. Fehlerhafte Einstellungen werden rot dargestellt und können nicht auf die Caterva gesendet werden. 
 |![BusinessOptimum](Bilder/BusinessOptimum_0.JPG) |Im Menüpunkt "Standardeinstellungen" können durch anklicken auf Sommer bzw. Winter zwei Standardkonfigurationen eingespielt werden. Dies ist hilfreich falls die Parameter noch nicht initialiisert sind (???). Will man eigene Standardkonfigurationen abspeichern klickt man auf "Standardkonfiguration editieren".
 |![BusinessOptimum](Bilder/BusinessOptimum_0.1.JPG) |Ganz unten in dem Dialog welcher sich daraufhin öffnet findet man "mySummerSetting" und "myWinterSetting" klickt man diese öffnen sich weitere Details.
 |![BusinessOptimum](Bilder/BusinessOptimum_0.2.JPG) |Die eigentlichen Parameter lassen sich nach Klick auf DEF auch verändern. 
@@ -91,53 +89,16 @@ Mit folgenden Terminal Kommandos kann man FHEM starten / stoppen / bzw. den Stat
 |![BusinessOptimum](Bilder/BusinessOptimum_7.JPG) |"lastloglines_BO" steht für die letzen Zeilen im Logfile der Business Optimum Logigk. Dies ist extrem wichtig um die korrekte Funktionsweise zu prüfen. Speziell wenn eine neue Konfiguration erstellt und gesendet wurde kann man hier sehen ob diese auch übernommen wurde.<br> Tipp: will man eine größere Anzahl von Zeilen angezeigt bekommen kann man die letzte Zahl im der Browseradresse entsprechend vergrößern.<br> `http://<ip.raspberr>:8083/fhem?cmd=lastloglines_BO+300`
 
 
+
+
+## Bei Änderungswünschen:   
+Bitte ein Issue eröffnen...
+https://github.com/meschnigm/fhem/issues
+
+
 ## Unterstützung
-Die Entwicklung der FHEM-Oberfläche ist mein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen und steht kostenlos zur Verfügung.  
-Wer auf freiwilliger Basis eine Anerkennung geben will kann hier tun. 
-https://paypal.me/pools/c/8xhRXwquVW
+Die Entwicklung der FHEM-Oberfläche ist ein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen. 
+Wer auf freiwilliger Basis eine Anerkennung geben will, kann dies hier tun. 
 
-
-
-
-## bekannte Probleme
-
-### Für Business-Optimum muß FHEM Dateinen auf die Caterva kopieren   
-Sind die Rechteeinstellungen nicht korrekt gesetzt gelingt das kopieren der config nicht.  
-Das Skript FHEM_Setup_Copy_per_Shell.sh welches dem Technikteam bekannt ist behebt das Problem.  
-Die aktuellen Skripte zur Aktualisierung der SW führen diese Einstellung automatisisert durch.  
-https://github.com/ac-caterva/webserver-public/blob/main/README.md
-
-
-### Fehlerspeicher/Statusregister können nicht ausgelesen werden. 
-Um die Fehlerregister auslesen zu können, muss zunächst eine Einstellung auf der Silverbox vorgenommen werden.<br>
-`ssh admin@caterva`<br>
-`sudo nano /etc/rc.local`<br>
-hier die Zeile 13 bis 15 auskommentieren also ein # einfügen.
-
-`# iptables -A INPUT -p tcp --dport 1337 -i lo -j ACCEPT`<br>
-`# iptables -A INPUT -p tcp --dport 1337 -i tun0 -j ACCEPT`<br>
-`# iptables -A INPUT -p tcp --dport 1337 -j DROP `<br>
-
-speichern mit str-o<br>
-exit mit str-x<br>
-Neustart mit <br>
-`sudo reboot -h now`
-
-### Warning: the ECDSA host key for 'caterva' differs ....
-Sollte folgende Warnung erscheinen... mit `yes` bestätigen <br>
-`Warning: the ECDSA host key for 'caterva' differs from the key for the IP address '192.168.0.222'`  <br>
-`Offending key for IP in /home/pi/.ssh/known_hosts:2` <br>
-`Matching host key in /home/pi/.ssh/known_hosts:5` <br>
-`Are you sure you want to continue connecting (yes/no)?`<br>
-
-Abhilfe mit .... <br>
-`mv ~/.ssh/known_hosts ~/.ssh/known_hosts.alt`  <br> 
-`touch ~/.ssh/known_hosts`  <br>
-
-danach das Skript manuell anstoßen und ggf. den neuen host mit "yes" bestätigen ...   <br>
-`cd /var/caterva/scripts/`  <br>
-`./copy_log.sh`  <br>
-
-führt man <br>
-`./copy_log.sh`<br> 
-erneut aus sollte das logfile ohne Fehlermeldung erzeugt werden.<br>
+Anja: https://paypal.me/pools/c/8xm58ob2st  
+Manuel: https://paypal.me/pools/c/8xhRXwquVW  
