@@ -1,4 +1,6 @@
-~/Git-Clones/fhem/sudo nano CHANGED
+#!/bin/bash
+
+sudo nano ~/Git-Clones/fhem/CHANGED
 ~/Git-Clones/fhem/Copy2FHEM.sh
 ~/Git-Clones/fhem/prepare_update.sh
 
