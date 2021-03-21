@@ -93,8 +93,8 @@ Ein Neustart des Raspberry-Pi kann über den Befehl ```restart fhem``` im Menüb
 Das geht wenn man sich eine VPN Verbindugn einrichtet. Mit so einem "Virtual Private Network" baut man eine sichere Verbindung zu seinem Heimnetzwerk auf.   
 Die gängignen Router können das (FritzBox, Speedport, etc) hier mal zwei Anleitung für die Fritzbox - abhängig von welchem Endgerät man zugreifen möchte.
 
-https://avm.de/service/vpn/tipps-tricks/vpn-verbindung-zur-fritzbox-unter-android-einrichten/
-https://avm.de/service/vpn/tipps-tricks/vpn-verbindung-zur-fritzbox-unter-apple-ios-zb-iphone-einrichten/
+https://avm.de/service/vpn/tipps-tricks/vpn-verbindung-zur-fritzbox-unter-android-einrichten/ <br>
+https://avm.de/service/vpn/tipps-tricks/vpn-verbindung-zur-fritzbox-unter-apple-ios-zb-iphone-einrichten/ <br>
 
 
 ## Bei Änderungswünschen:   
