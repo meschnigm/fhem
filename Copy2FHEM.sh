@@ -16,8 +16,10 @@ then
     cp /opt/fhem/FHEM/00_Caterva_ESS.cfg /home/pi/Git-Clones/fhem/FHEM
     cp /opt/fhem/FHEM/00_SYSMON.cfg      /home/pi/Git-Clones/fhem/FHEM
     cp /opt/fhem/FHEM/99_myUtils.pm      /home/pi/Git-Clones/fhem/FHEM
-    cp /opt/fhem/FHEM/00_Private.cfg     /home/pi/Git-Clones/fhem/FHEM
-    cp /opt/fhem/FHEM/00_BusinessOptimum_Parameter.cfg     /home/pi/Git-Clones/fhem/FHEM
+
+   #cp /opt/fhem/FHEM/00_Private.cfg     /home/pi/Git-Clones/fhem/FHEM
+   
+   cp /opt/fhem/FHEM/00_BusinessOptimum_Parameter.cfg     /home/pi/Git-Clones/fhem/FHEM
 
     cp /opt/fhem/fhem.cfg                /home/pi/Git-Clones/fhem
 
