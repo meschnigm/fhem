@@ -1,3 +1,4 @@
+2021-08-04 split utils in BO and CS_Steuerung
 2021-03-21 47_Reading umbenannt in Average_Load_Caterva
 2021-03-17 Abfrage LLN0 Register nur wenn Caterva eingeschalten
 2021-03-15 Bei täglichem update auch SW-Verteilprozess für PI anstossen
