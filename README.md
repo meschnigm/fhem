@@ -97,6 +97,23 @@ https://avm.de/service/vpn/tipps-tricks/vpn-verbindung-zur-fritzbox-unter-androi
 https://avm.de/service/vpn/tipps-tricks/vpn-verbindung-zur-fritzbox-unter-apple-ios-zb-iphone-einrichten/ <br>
 
 
+## Business-Optimum und CS_Steuerung
+
+Es gibt zwei Zusatprogramme welche die Caterva am Ein- bzw. Ausspeichern hindern falls der Ladeleistung bzw. die Entladeleistung relativ gering ist. Mit diesen Programmen soll der Wirkungsgrad der Anlage erhöht werden. Das Business Optimumg von Siegfreid wurde nicht allen zugänglich gemacht worauf Uli eine alternative Lösung programmiert hat. FHEM unterstützt wahlweise beide Varianten wobei die Business Optimum Variante nicht weiter gepflegt wird.<br>
+<br>
+Um die FHEM Oberfläche zu aktivieren muss ein Konfigurationsfile angepasst werden.<br>
+Dazu muss man sich mit Remotedesktop am Raspberry anmelden und ein Terminalfenster öffnen.<br>
+danach <br>
+````sudo nano /opt/fhem/FHEM/00_Private.cfg````<br>
+eingeben <br>
+**eine** der folgenden Zeilen einfügen... <br>
+````include ./FHEM/00_BusinessOptimum.cfg````<br> 
+````include ./FHEM/00_CS_Steuerung.cfg````<br>
+und mit Strg-O  Strg-X den Nano Editor verlassen.
+Nach Neustart von FHEM über die FHEM Oberfläche sollte die zusätzliche FHEM Seite nun im Menü sichtbar sein.
+
+
+
 ## Bei Änderungswünschen:   
 Bitte ein Issue eröffnen...
 https://github.com/meschnigm/fhem/issues
