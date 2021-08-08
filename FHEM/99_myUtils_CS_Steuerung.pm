@@ -24,7 +24,7 @@ sub
 create_CS_Steuerung_config()
 {
 
-my $filename = "/home/admin/bin/CS_Steuerung.txt";
+my $filename = "/home/admin/bin/CS_Steuerung.cfg";
 
 my $SoC_max = ReadingsNum("SoC_max","state",90);
 my $SoC_charge = ReadingsNum("SoC_charge","state",80);
