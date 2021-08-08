@@ -108,8 +108,8 @@ danach <br>
 eingeben <br>
 **eine** der folgenden Zeilen einfügen... <br>
 ````include ./FHEM/00_BusinessOptimum.cfg````<br> 
-````include ./FHEM/00_CS_Steuerung.cfg````<br>
-und mit Strg-O  Strg-X den Nano Editor verlassen.
+````include ./FHEM/00_CS_Steuerung.cfg````<br><br>
+und mit Strg-O  Strg-X den Nano Editor verlassen.<br>
 Nach Neustart von FHEM über die FHEM Oberfläche sollte die zusätzliche FHEM Seite nun im Menü sichtbar sein.
 
 
