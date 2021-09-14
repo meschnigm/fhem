@@ -102,7 +102,7 @@ https://avm.de/service/vpn/tipps-tricks/vpn-verbindung-zur-fritzbox-unter-apple-
 
 Es gibt zwei Zusatprogramme welche die Caterva am Ein- bzw. Ausspeichern hindern falls der Ladeleistung bzw. die Entladeleistung relativ gering ist. Mit diesen Programmen soll der Wirkungsgrad der Anlage erhöht werden. Das Business Optimumg von Siegfreid wurde nicht allen zugänglich gemacht worauf Uli eine alternative Lösung programmiert hat. FHEM unterstützt wahlweise beide Varianten wobei die Business Optimum Variante nicht weiter gepflegt wird.<br>
 <br>
-Es gibt ein Skript um die FHEM Oberfläche für die CS-Steuerung zu aktivieren:
+Es gibt ein Skript um die FHEM Oberfläche für die CS-Steuerung zu aktivieren:<br>
 https://github.com/ac-caterva/webserver-public#cs-steuerung-aktivieren
 
 Wer weiterhin Business Optimum nutzen möchte bitte die Änderung manuell durchführen...
