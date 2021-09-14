@@ -124,4 +124,4 @@ Die Entwicklung der FHEM-Oberfläche ist ein Beitrag zu unserem gemeinsamen Ziel
 Wer auf freiwilliger Basis eine Anerkennung geben will, kann dies hier tun. 
 
 Anja: https://www.paypal.com/paypalme/ChristianAnja  
-Manuel: https://www.paypal.com/paypalme/  
+Manuel: https://www.paypal.com/paypal.me/ManuelMeschnig
