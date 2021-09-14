@@ -13,7 +13,7 @@ Genau diese Oberfläche ist in FHEM realisiert.
 ## Was ist FHEM
 
 FHEM (TM) ist ein in Perl geschriebener, GPL lizensierter Server für die Heimautomatisierung. 
-In FHEM können von den unterschiedlichsten Geräten im Haushalt Daten angezeigt und Steuerungsaufgaben programmiert werden.
+In FHEM können von den unthttps://www.paypal.com/paypal.me/ManuelMeschnigerschiedlichsten Geräten im Haushalt Daten angezeigt und Steuerungsaufgaben programmiert werden.
 
 ## Funktionsumfang
 
@@ -123,5 +123,5 @@ https://github.com/meschnigm/fhem/issues
 Die Entwicklung der FHEM-Oberfläche ist ein Beitrag zu unserem gemeinsamen Ziel unsere Speicher weiterhin sinnvoll zu nutzen. 
 Wer auf freiwilliger Basis eine Anerkennung geben will, kann dies hier tun. 
 
-Anja: https://paypal.me/pools/c/8xm58ob2st  
-Manuel: https://paypal.me/pools/c/8xhRXwquVW  
+Anja: https://www.paypal.com/paypalme/ChristianAnja  
+Manuel: https://www.paypal.com/paypalme/ManuelMeschnig
