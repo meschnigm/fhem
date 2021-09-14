@@ -43,8 +43,7 @@ my $string = "# Erste Spalte bis zu diesem Wert soll der Speicher geladen werden
 my @dataArray = ($SoC_max,$SoC_charge,$P_in_W_chargeStandbyThreshold,$P_in_W_dischargeStandbyThreshold,$Auto_Balancing);
 
 
-overwriteLog($filename, " 
-$SoC_max;$SoC_charge;$P_in_W_chargeStandbyThreshold;$P_in_W_dischargeStandbyThreshold;$Auto_Balancing");
+overwriteLog($filename, "$SoC_max;$SoC_charge;$P_in_W_chargeStandbyThreshold;$P_in_W_dischargeStandbyThreshold;$Auto_Balancing");
 
 
 fhem("setreading write_settings Data @dataArray"); 	
