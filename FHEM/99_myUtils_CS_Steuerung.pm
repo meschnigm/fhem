@@ -68,7 +68,25 @@ system("scp /opt/fhem/log/CS_Steuerung.cfg admin\@caterva:bin");
 
 
 
+sub 
+readfromcaterva_CS_Steuerung_config()
+{ 
 
+my $config_skalar = `ssh admin\@caterva "tail -1 /home/admin/bin/CS_Steuerung.cfg"`;
+my @config_array=split(/\;/,$config_skalar);
+
+Log 1, "Von Caterva eingelesene BO Config: $config_skalar";
+Log 1, "Lokal vor  Update:                  ".ReadingsVal("write_settings","Data","999");
+
+if ($config_array[0] ne ReadingsNum("SoC_max","state",0)) {fhem("set SoC_max $config_array[0]")};
+if ($config_array[1] ne ReadingsNum("SoC_charge","state",0)) {fhem("set SoC_charge $config_array[1]")};
+if ($config_array[2] ne ReadingsNum("P_in_W_chargeStandbyThreshold","state",0)) {fhem("set P_in_W_chargeStandbyThreshold $config_array[2]")};
+if ($config_array[3] ne ReadingsNum("P_in_W_dischargeStandbyThreshold","state",0)) {fhem("set P_in_W_dischargeStandbyThreshold $config_array[3]")};
+if ($config_array[4] ne ReadingsNum("Auto_Balancing","state",0)) {fhem("set Auto_Balancing $config_array[4]")};
+
+Log 1, "Lokal nach Update:                  ".ReadingsVal("write_settings","Data","999");
+
+}
 
 
 
