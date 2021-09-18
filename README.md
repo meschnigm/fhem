@@ -26,7 +26,7 @@ Auf der Weboberfläche können die...
 ... Anzeige ob alle relevanten Netzwerkgeräte verfügbar sind  
 ... Anzeige Prozessorlast der Caterva   (Load)  
 ... Herunterfahren bzw Restart des Business-Controllers (Caterva) - Herunterfahren empfielt sich vor dem Ausschalten der Sicherung.
-... Bedienoberfläche für Business-Optimum - damit können Vorgaben gemacht werden um den Wirkungsgrad der Anlage zu erhöhen. (Beta-Phase)
+... Bedienoberfläche für die CS-Steuerung - damit können Vorgaben gemacht werden um den Wirkungsgrad der Anlage zu erhöhen.
 
 ## Voraussetzungen:
 
