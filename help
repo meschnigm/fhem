@@ -1,6 +1,8 @@
 #!/bin/bash
+ssh-add ~/.ssh/id_ed25519
 
 sudo nano ~/Git-Clones/fhem/CHANGED
 ~/Git-Clones/fhem/Copy2FHEM.sh
 ~/Git-Clones/fhem/prepare_update.sh
 
+git push git@github.com:meschnigm/fhem.git
