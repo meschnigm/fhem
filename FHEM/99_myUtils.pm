@@ -112,7 +112,7 @@ my @failuretext = (
 'WarAlm(22) -  Messung der Leistung am Hausanschluss nicht möglich, Messgerät nicht verfügbar!',
 'WarAlm(23) -  Messung der PV-Leistung nicht möglich, Messgerät nicht verfügbar!',
 'WarAlm(24) -  ESS hat keine Verbindung zum Frequenzserver.-Alarm kann ignoriert werden.',
-'WarAlm(25) -  PV-Pufferung ist deaktiviert.-Alarm kann ignoriert werden.',
+'WarAlm(25) -  PV-Pufferung ist deaktiviert.-BusinessOptimum oder CS-Steuerung aktiv? Alarm kann ignoriert werden.',
 'WarAlm(26) -  Lokales Steuergerät meldet eine Warnung.-Alarm kann ignoriert werden.',
 'WarAlm(27) -  Batterie Steuergerät (BMM) meldet eine Warnung.-Alarm kann ignoriert werden.',
 'WarAlm(28) -  nicht belegt',
@@ -904,6 +904,7 @@ addToLog($filename, "$timestamp4 03: $stat30_ESS_counter_level_discharge_in_WhDa
 #system("ssh admin\@caterva touch /tmp/CellBalancing");
 #Log 1, "CellBalancing_Flag gesetzt";
 #}
+
 
 
 
