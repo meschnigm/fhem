@@ -907,23 +907,6 @@ addToLog($filename, "$timestamp4 03: $stat30_ESS_counter_level_discharge_in_WhDa
 
 
 
-sub
-reset_Befehl_Anzeige()
-{
-		fhem("define at_Sec_Counter at +00:00:03 set BusinessOptimum_Befehle .");
-		fhem("attr at_Sec_Counter room 6_System");
-}
-
-
-
-#sub
-#check_noPVBuffering_Flag()
-#{
-#my $response = `(echo -f /home/admin/registry/noPVBuffering;)`;
-#if ($response) {Log 1,"File noPVBuffering existiert"} else {Log 1,"File noPVBuffering existiert nicht"}; 
-#}
-
-
 
 #/home/pi/Git-Clones/.FHEM_Setup_Copy_per_Shell.did_run
 sub

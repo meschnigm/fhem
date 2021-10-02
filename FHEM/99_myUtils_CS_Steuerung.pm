@@ -2,7 +2,7 @@
 # $Id: myUtilsTemplate.pm 21509 2020-03-25 11:20:51Z rudolfkoenig $
 #
 # Save this file as 99_myUtils.pm, and create your own functions in the new
-# file. They are then available in every Perl expression.
+# file. They are then available in every Perl expression..
 
 package main;
 
@@ -88,9 +88,45 @@ Log 1, "Lokal nach Update:                  ".ReadingsVal("write_settings","Data
 
 }
 
+sub 
+Stop_CS_Steuerung()
+{
+Log 1, "CS_Steuerung angehalten";
+fhem("set CS_Steuerung_Befehle CS_Steuerung angehalten");
+system("ssh admin\@caterva touch /tmp/CS_SteuerungStop");
+reset_CS_Befehl_Anzeige();
+fhem("define at_Sec_Counter_Stop_CS_Steuerung at +00:00:08 setreading CS_Steuerung_Status trigger 1");
+fhem("attr at_Sec_Counter_Stop_CS_Steuerung room hidden");
+}
 
 
 
+sub 
+Start_CS_Steuerung()
+{
+Log 1, "CS_Steuerung gestartet";
+fhem("set CS_Steuerung_Befehle CS_Steuerung gestartet");
+system("ssh admin\@caterva rm /tmp/CS_SteuerungStop");
+reset_CS_Befehl_Anzeige();
+fhem("define at_Sec_Counter_Start_CS_Steuerung at +00:00:08 setreading CS_Steuerung_Status trigger 1");
+fhem("attr at_Sec_Counter_Start_CS_Steuerung room hidden");
+}
+
+sub 
+CS_Steuerung_CheckStatus()
+{
+fhem("set CS_Steuerung_Befehle CheckStatus");
+#fhem("setreading CS_Steuerung_Status trigger 1");
+reset_CS_Befehl_Anzeige();
+}
+
+
+sub
+reset_CS_Befehl_Anzeige()
+{
+		fhem("define at_Sec_Counter at +00:00:03 set CS_Steuerung_Befehle .");
+		fhem("attr at_Sec_Counter room hidden");
+}
 
 
 

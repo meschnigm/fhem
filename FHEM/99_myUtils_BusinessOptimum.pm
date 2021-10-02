@@ -273,6 +273,12 @@ Log 1,"Business Optimum nicht installiert";
 }
 
 
+sub
+reset_Befehl_Anzeige()
+{
+		fhem("define at_Sec_Counter at +00:00:03 set BusinessOptimum_Befehle .");
+		fhem("attr at_Sec_Counter room 6_System");
+}
 
 
 
