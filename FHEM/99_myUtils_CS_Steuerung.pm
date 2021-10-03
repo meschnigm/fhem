@@ -61,6 +61,7 @@ sub
 copy2caterva_CS_Steuerung_config()
 {
 system("scp /opt/fhem/log/CS_Steuerung.cfg admin\@caterva:bin");
+reset_CS_Befehl_Anzeige();
 }
 
 
